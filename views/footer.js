@@ -18,9 +18,9 @@ class AppFooter extends HTMLElement {
           <div class="space-y-4">
             <h5 class="text-slate-900 dark:text-slate-100 font-bold text-sm uppercase tracking-widest">Data Sources</h5>
             <nav class="flex flex-col space-y-2">
-              <a class="text-slate-500 hover:text-sky-600 transition-colors text-sm font-body antialiased" href="#">Meteorological Data</a>
-              <a class="text-slate-500 hover:text-sky-600 transition-colors text-sm font-body antialiased" href="#">EO Sources</a>
-              <a class="text-slate-500 hover:text-sky-600 transition-colors text-sm font-body antialiased" href="#">IFFI Registry</a>
+              <a class="text-slate-500 hover:text-sky-600 transition-colors text-sm font-body antialiased" href="https://open-meteo.com">Meteorological Data</a>
+              <a class="text-slate-500 hover:text-sky-600 transition-colors text-sm font-body antialiased" href="https://sentinels.copernicus.eu">EO Sources</a>
+              <a class="text-slate-500 hover:text-sky-600 transition-colors text-sm font-body antialiased" href="https://idrogeo.isprambiente.it">IFFI Registry</a>
             </nav>
           </div>
           <div class="space-y-4">
@@ -36,7 +36,7 @@ class AppFooter extends HTMLElement {
           </div>
         </div>
         <div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-slate-200 dark:border-slate-800 text-center">
-          <p class="text-slate-500 text-sm antialiased font-body">© 2024 GeoSentinel Cassini. Orbital Intelligence for Terrestrial Security.</p>
+          <p class="text-slate-500 text-sm antialiased font-body">© 2026 GeoSentinel Cassini. Orbital Intelligence for Terrestrial Security.</p>
         </div>
       </footer>
     `;
