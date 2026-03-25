@@ -30,24 +30,26 @@
         src="https://lh3.googleusercontent.com/aida-public/AB6AXuCM9wW8OlPhh_d9V16L86K-TAQc1k0EyilVXMOpRaxJhSPyThN0b0wwkWGQe-VdOTrYEV8Hv5gVkyXb2dVovXPuq8bacPyiHcfebSq3G8JMm9cMTInMdpuaXOhfelf-pHwH5wT2CjemvQ2KqIpKwt1sAiHCmvcj3ypQeZl3J3Echm6I5tGsv_yhyobBosulrZc4V-xkodOLoz4_cyPU3SbNNyOkf3TpcVnIaZmZdHRxUHLzt127MzGtZg0D53NA_z-mvt1zw9mjrrU" />
       <div class="hero-overlay"></div>
     </div>
-    
+
     <div class="hero-content-wrapper">
       <div class="hero-content-left">
         <div class="hero-badge">
-          <span class="material-symbols-outlined hero-badge-icon" style="font-variation-settings: 'FILL' 1;">satellite_alt</span>
+          <span class="material-symbols-outlined hero-badge-icon"
+            style="font-variation-settings: 'FILL' 1;">satellite_alt</span>
         </div>
-        
+
         <h1 class="hero-title">
           Safety from Space. <br />
           <span class="hero-title-highlight">Precision on the Trail.</span>
         </h1>
-        
+
         <p class="hero-description">
-          GeoHike is a web service that calculates a geo-hydrological risk index for hiking trails by combining three
+          GeoSentinel is a web service that calculates a geo-hydrological risk index for hiking trails by combining
+          three
           components: historical risk based on slide history, soil moisture from Sentinel-1 SAR, and real-time
           precipitation data and weather changes.
         </p>
-        
+
         <div class="hero-actions">
           <a href="https://gis-landslide-detection.vercel.app/" class="btn-explore">
             Explore Safe Trails near Lago di Fiastra
@@ -68,13 +70,13 @@
               <span class="status-text">Active</span>
             </div>
           </div>
-          
+
           <div class="map-container">
             <iframe src="https://gis-landslide-detection.vercel.app/" title="GeoSentinel Interactive Map"
               class="map-iframe"></iframe>
             <div class="map-overlay"></div>
           </div>
-          
+
           <div class="info-grid">
             <div class="info-card">
               <p class="info-label">Satellite Lat/Long</p>
@@ -99,7 +101,7 @@
           a unified risk assessment. Our proprietary algorithm fuses atmospheric, terrestrial, and historical signals
           into a single, actionable score.</p>
       </div>
-      
+
       <div class="features-grid">
         <!-- Meteorological Data -->
         <div class="feature-card">
@@ -110,7 +112,7 @@
           <p class="feature-description">Real-time monitoring of rainfall intensity and
             high-precision 3-days forecasts history to analyze weather changes in the last days.</p>
         </div>
-        
+
         <!-- EO Data -->
         <div class="feature-card">
           <div class="feature-icon-wrapper-secondary">
@@ -120,7 +122,7 @@
           <p class="feature-description">Direct Earth Observation analysis measuring soil
             moisture levels and terrain saturation to identify areas prone to instability.</p>
         </div>
-        
+
         <!-- IFFI Records -->
         <div class="feature-card">
           <div class="feature-icon-wrapper-error">
@@ -131,7 +133,7 @@
             map historical hazard zones and recurring geological risk patterns.</p>
         </div>
       </div>
-      
+
       <div class="risk-synthesis-card">
         <div class="risk-details">
           <h4 class="risk-title">Integrated Risk Synthesis</h4>
@@ -156,23 +158,26 @@
             </div>
           </div>
         </div>
-        
+
         <div class="circular-progress-wrapper">
           <svg class="circular-progress-svg">
-            <circle class="circular-progress-bg" cx="128" cy="128" fill="transparent" r="110" stroke="currentColor" stroke-width="24"></circle>
-            <circle class="circular-progress-value" cx="128" cy="128" fill="transparent" r="110" stroke="currentColor" stroke-dasharray="691" stroke-dashoffset="550" stroke-width="24"></circle>
+            <circle class="circular-progress-bg" cx="128" cy="128" fill="transparent" r="110" stroke="currentColor"
+              stroke-width="24"></circle>
+            <circle class="circular-progress-value" cx="128" cy="128" fill="transparent" r="110" stroke="currentColor"
+              stroke-dasharray="691" stroke-dashoffset="550" stroke-width="24"></circle>
           </svg>
           <div class="circular-progress-content">
             <span class="circular-progress-score">2.4</span>
             <span class="circular-progress-label">Danger Index</span>
           </div>
         </div>
-        
+
         <div class="risk-summary">
           <p class="risk-quote">"The composite index allows hikers to be alerted about
             terrain that looks solid but is structurally compromised."</p>
           <div class="status-alert">
-            <span class="material-symbols-outlined status-alert-icon" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+            <span class="material-symbols-outlined status-alert-icon"
+              style="font-variation-settings: 'FILL' 1;">check_circle</span>
             <span class="status-alert-text">Current Status: Good for Exploration</span>
           </div>
         </div>
@@ -278,7 +283,7 @@
         statusEl.innerText = data.payload.status;
 
         // Opzionale: puoi cambiare il colore a seconda dello status
-        if(data.payload.riskLevel === 'High') {
+        if (data.payload.riskLevel === 'High') {
           statusEl.className = "risk-label-error"; // Usa un colore di allerta
         } else {
           statusEl.className = "risk-label-secondary";
