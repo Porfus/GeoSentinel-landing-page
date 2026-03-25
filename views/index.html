@@ -156,11 +156,11 @@
           <div class="grid grid-cols-2 gap-4">
             <div class="bg-surface-container-low p-4 rounded-lg">
               <p class="text-[10px] uppercase font-bold text-outline tracking-tighter mb-1">Satellite Lat/Long</p>
-              <p class="font-headline font-bold text-on-surface">45.8327° N, 6.8650° E</p>
+              <p id="coord-card" class="font-headline font-bold text-on-surface">45.8327° N, 6.8650° E</p>
             </div>
             <div class="bg-surface-container-low p-4 rounded-lg">
               <p class="text-[10px] uppercase font-bold text-outline tracking-tighter mb-1">Terrain Status</p>
-              <p class="font-headline font-bold text-secondary">Secure Pass</p>
+              <p id="status-card" class="font-headline font-bold text-secondary">Secure Pass</p>
             </div>
           </div>
         </div>
@@ -336,6 +336,32 @@
           closeModal();
         }
       });
+    });
+   </script>
+
+   <script>
+    // In ascolto di messaggi provenienti dall'iframe
+    window.addEventListener("message", (event) => {
+      // Per sicurezza, potresti verificare l'origine:
+      // if (event.origin !== "https://gis-landslide-detection.vercel.app") return;
+      
+      const data = event.data;
+      
+      // Assicurati che il messaggio contenga le informazioni previste
+      if (data && data.type === "TRAIL_SELECTED") {
+        document.getElementById("coord-card").innerText = 
+          `${data.payload.lat.toFixed(4)}° N, ${data.payload.lng.toFixed(4)}° E`;
+        
+        const statusEl = document.getElementById("status-card");
+        statusEl.innerText = data.payload.status;
+        
+        // Opzionale: puoi cambiare il colore a seconda dello status
+        if(data.payload.riskLevel === 'High') {
+          statusEl.className = "font-headline font-bold text-error"; // Usa un colore di allerta
+        } else {
+          statusEl.className = "font-headline font-bold text-secondary";
+        }
+      }
     });
   </script>
 </body>
