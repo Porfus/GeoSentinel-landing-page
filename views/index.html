@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>GeoSentinel | Satellite-Powered Trail Security</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-container-low": "#f3f4f5",
+            "on-surface": "#191c1d",
+            "surface-bright": "#f8f9fa",
+            "secondary-container": "#7afbb1",
+            "on-error": "#ffffff",
+            "on-primary-fixed-variant": "#004c6b",
+            "inverse-primary": "#82cfff",
+            "primary-fixed": "#c6e7ff",
+            "on-secondary-container": "#007444",
+            "surface": "#f8f9fa",
+            "tertiary-fixed-dim": "#c4c7c8",
+            "tertiary-container": "#a0a3a4",
+            "surface-container-high": "#e7e8e9",
+            "on-tertiary-fixed": "#181c1d",
+            "surface-container-lowest": "#ffffff",
+            "on-primary-container": "#003e58",
+            "secondary-fixed": "#7afbb1",
+            "outline-variant": "#bdc8d1",
+            "on-secondary-fixed-variant": "#00522f",
+            "primary": "#00658d",
+            "secondary": "#006d40",
+            "on-secondary": "#ffffff",
+            "on-error-container": "#93000a",
+            "background": "#f8f9fa",
+            "on-primary": "#ffffff",
+            "on-tertiary-container": "#363a3b",
+            "on-tertiary": "#ffffff",
+            "inverse-surface": "#2e3132",
+            "error-container": "#ffdad6",
+            "surface-dim": "#d9dadb",
+            "error": "#ba1a1a",
+            "on-tertiary-fixed-variant": "#434748",
+            "tertiary": "#5b5f60",
+            "surface-tint": "#00658d",
+            "on-surface-variant": "#3e4850",
+            "inverse-on-surface": "#f0f1f2",
+            "on-secondary-fixed": "#002110",
+            "primary-fixed-dim": "#82cfff",
+            "on-primary-fixed": "#001e2d",
+            "surface-variant": "#e1e3e4",
+            "surface-container-highest": "#e1e3e4",
+            "primary-container": "#00aeef",
+            "tertiary-fixed": "#e0e3e4",
+            "surface-container": "#edeeef",
+            "outline": "#6e7881",
+            "secondary-fixed-dim": "#5cde97",
+            "on-background": "#191c1d"
+          },
+          fontFamily: {
+            "headline": ["Space Grotesk"],
+            "body": ["Inter"],
+            "label": ["Inter"]
+          },
+          borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .glass-panel {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .hero-gradient {
+      background: linear-gradient(135deg, #00658d 0%, #00aeef 100%);
+    }
+  </style>
+</head>
+
+<body class="bg-surface text-on-surface font-body antialiased">
+  <!-- Top Navigation Bar -->
+  <nav
+    class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm dark:shadow-none border-b border-slate-200/50 dark:border-slate-800/50">
+    <div class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto h-20">
+      <a href="home.html"
+        class="text-2xl font-black text-sky-900 dark:text-sky-100 font-headline tracking-tight">GeoSentinel</a>
+      <div class="hidden md:flex space-x-8 items-center">
+        <a class="text-sky-600 dark:text-sky-400 border-b-2 border-sky-600 font-headline font-bold tracking-tight py-1 transition-all"
+          href="home.html">Explore Trails</a>
+        <a class="text-slate-600 dark:text-slate-400 font-headline font-bold tracking-tight hover:text-sky-500 dark:hover:text-sky-300 transition-colors"
+          href="howitworks.html">How It Works</a>
+        <a class="text-slate-600 dark:text-slate-400 font-headline font-bold tracking-tight hover:text-sky-500 dark:hover:text-sky-300 transition-colors"
+          href="aboutus.html">About Us</a>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="https://gis-landslide-detection.vercel.app/"
+          class="bg-gradient-to-br from-primary to-primary-container text-white px-6 py-2.5 rounded-lg font-headline font-bold transition-all active:opacity-80 active:scale-95 shadow-md">Try
+          the MVP (lago di Fiastra area)</a>
+      </div>
+    </div>
+  </nav>
+  <!-- Hero Section -->
+  <header class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img alt="Panoramic mountain view with digital satellite overlays" class="w-full h-full object-cover"
+        data-alt="expansive alpine mountain range at dusk with digital wireframe technical satellite grid overlays and glowing data points"
+        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCM9wW8OlPhh_d9V16L86K-TAQc1k0EyilVXMOpRaxJhSPyThN0b0wwkWGQe-VdOTrYEV8Hv5gVkyXb2dVovXPuq8bacPyiHcfebSq3G8JMm9cMTInMdpuaXOhfelf-pHwH5wT2CjemvQ2KqIpKwt1sAiHCmvcj3ypQeZl3J3Echm6I5tGsv_yhyobBosulrZc4V-xkodOLoz4_cyPU3SbNNyOkf3TpcVnIaZmZdHRxUHLzt127MzGtZg0D53NA_z-mvt1zw9mjrrU" />
+      <div class="absolute inset-0 bg-slate-900/40 backdrop-brightness-75"></div>
+    </div>
+    <div class="relative z-10 container mx-auto px-8 grid lg:grid-cols-2 gap-12 items-center">
+      <div class="max-w-2xl">
+        <div
+          class="inline-flex items-center gap-2 bg-secondary-container/20 border border-secondary-container/30 rounded-full px-4 py-1.5 mb-6 backdrop-blur-md">
+          <span class="material-symbols-outlined text-secondary text-sm"
+            style="font-variation-settings: 'FILL' 1;">satellite_alt</span>
+          <span class="text-on-secondary-container font-headline text-sm font-bold tracking-wide uppercase">Cassini
+            Challenge Entry</span>
+        </div>
+        <h1 class="text-5xl md:text-7xl font-headline font-bold text-white leading-tight mb-6">
+          Safety from Space. <br />
+          <span class="text-primary-container">Precision on the Trail.</span>
+        </h1>
+        <p class="text-lg md:text-xl text-slate-100 font-light mb-10 leading-relaxed max-w-xl">
+          The first hikers' security system correlating satellite imagery, meteorological data, and geological history
+          to keep you safe.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <button
+            class="bg-gradient-to-r from-primary to-primary-container text-white px-8 py-4 rounded-xl font-headline font-bold text-lg hover:shadow-xl transition-all">
+            Explore Safe Trails near Lago di Fiastra
+          </button>
+          <button
+            class="glass-panel text-on-surface px-8 py-4 rounded-xl font-headline font-bold text-lg hover:bg-white transition-all flex items-center justify-center gap-2">
+            <span class="material-symbols-outlined">play_circle</span>
+            Watch GeoSentinel Presentation
+          </button>
+        </div>
+      </div>
+      <div class="hidden lg:block">
+        <div class="glass-panel p-8 rounded-2xl shadow-2xl border border-white/20 transform rotate-2">
+          <div class="flex justify-between items-center mb-6">
+            <span class="font-headline font-bold text-primary">Live Orbital Feed</span>
+            <div class="flex gap-2">
+              <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+              <span class="text-xs font-bold text-secondary uppercase tracking-widest">Active</span>
+            </div>
+          </div>
+          <div class="aspect-square rounded-lg overflow-hidden relative mb-4">
+            <img alt="Topographic satellite view"
+              class="w-full h-full object-cover grayscale brightness-50 contrast-125"
+              data-alt="high resolution satellite topographical view of a rugged mountain valley with infrared vegetation highlights"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_DvWAtzTXU49Ia4wD-eSftPjYY9VBqmPLvRtyZihIDwghhJYSkT7z4FHzrkAqFjaJ47h4LeHxZpVitnUngnsti3lmblSor_4miFdW40j6Hwu5dhRWS5wDVep_rJSM-aoLasQGO2F2cYR6TrXgWMg9-HPwcL7tBXv-EiuxBw6UZjtiVsxZui8SQMNu55FYCt7FBvoftx_s_5TINcCoJXSsZ_RS1Kn7qAwOjPw8q4ar2HB-8E8YdZruZn2O_MyoJ8f900MIOc3f0b0" />
+            <div class="absolute inset-0 border-[0.5px] border-primary/30 pointer-events-none"></div>
+            <div
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 border border-primary-container/50 rounded-full animate-ping opacity-20">
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="bg-surface-container-low p-4 rounded-lg">
+              <p class="text-[10px] uppercase font-bold text-outline tracking-tighter mb-1">Satellite Lat/Long</p>
+              <p class="font-headline font-bold text-on-surface">45.8327° N, 6.8650° E</p>
+            </div>
+            <div class="bg-surface-container-low p-4 rounded-lg">
+              <p class="text-[10px] uppercase font-bold text-outline tracking-tighter mb-1">Terrain Status</p>
+              <p class="font-headline font-bold text-secondary">Secure Pass</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Danger Index Section -->
+  <section class="py-24 bg-surface-container-low relative overflow-hidden">
+    <div class="container mx-auto px-8">
+      <div class="max-w-3xl mb-16">
+        <h2 class="text-4xl font-headline font-bold text-on-surface mb-4">The GeoSentinel Danger Index</h2>
+        <p class="text-lg text-on-surface-variant leading-relaxed">We process petabytes of environmental data to provide
+          a unified risk assessment. Our proprietary algorithm fuses atmospheric, terrestrial, and historical signals
+          into a single, actionable score.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8 mb-20">
+        <!-- Meteorological Data -->
+        <div class="bg-surface-container-lowest p-8 rounded-xl transition-transform hover:-translate-y-1">
+          <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+            <span class="material-symbols-outlined text-primary text-3xl">thunderstorm</span>
+          </div>
+          <h3 class="text-xl font-headline font-bold mb-3">Meteorological Data</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Real-time monitoring of rainfall intensity and
+            high-precision 24-hour forecasts to predict flash flood risks and visibility shifts.</p>
+        </div>
+        <!-- EO Data -->
+        <div class="bg-surface-container-lowest p-8 rounded-xl transition-transform hover:-translate-y-1">
+          <div class="w-14 h-14 bg-secondary/10 rounded-lg flex items-center justify-center mb-6">
+            <span class="material-symbols-outlined text-secondary text-3xl">terrain</span>
+          </div>
+          <h3 class="text-xl font-headline font-bold mb-3">EO Satellite Data</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Direct Earth Observation analysis measuring soil
+            moisture levels and terrain saturation to identify areas prone to instability.</p>
+        </div>
+        <!-- IFFI Records -->
+        <div class="bg-surface-container-lowest p-8 rounded-xl transition-transform hover:-translate-y-1">
+          <div class="w-14 h-14 bg-error/10 rounded-lg flex items-center justify-center mb-6">
+            <span class="material-symbols-outlined text-error text-3xl">history_edu</span>
+          </div>
+          <h3 class="text-xl font-headline font-bold mb-3">IFFI Records</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Integration with the Italian Landslide Inventory to
+            map historical hazard zones and recurring geological risk patterns.</p>
+        </div>
+      </div>
+      <div
+        class="bg-white rounded-2xl p-12 shadow-sm border border-outline-variant/20 flex flex-col lg:flex-row items-center gap-12">
+        <div class="flex-1">
+          <h4 class="text-2xl font-headline font-bold mb-6 text-on-surface">Integrated Risk Synthesis</h4>
+          <div class="space-y-6">
+            <div class="flex items-center gap-4">
+              <div class="flex-1 h-3 bg-surface-container-high rounded-full overflow-hidden">
+                <div class="h-full bg-secondary w-[85%]"></div>
+              </div>
+              <span class="font-headline font-bold text-secondary">Vegetation</span>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="flex-1 h-3 bg-surface-container-high rounded-full overflow-hidden">
+                <div class="h-full bg-primary w-[40%]"></div>
+              </div>
+              <span class="font-headline font-bold text-primary">Precipitation</span>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="flex-1 h-3 bg-surface-container-high rounded-full overflow-hidden">
+                <div class="h-full bg-error w-[15%]"></div>
+              </div>
+              <span class="font-headline font-bold text-error">Hazard History</span>
+            </div>
+          </div>
+        </div>
+        <div class="w-64 h-64 relative flex items-center justify-center shrink-0">
+          <svg class="w-full h-full transform -rotate-90">
+            <circle class="text-surface-container-high" cx="128" cy="128" fill="transparent" r="110"
+              stroke="currentColor" stroke-width="24"></circle>
+            <circle class="text-secondary transition-all" cx="128" cy="128" fill="transparent" r="110"
+              stroke="currentColor" stroke-dasharray="691" stroke-dashoffset="550" stroke-width="24"></circle>
+          </svg>
+          <div class="absolute inset-0 flex flex-col items-center justify-center">
+            <span class="text-6xl font-headline font-black text-on-surface">2.4</span>
+            <span class="text-xs font-bold uppercase tracking-widest text-outline">Danger Index</span>
+          </div>
+        </div>
+        <div class="flex-1">
+          <p class="text-on-surface-variant mb-6 italic">"The composite index allows hikers to see the invisible
+            dangers—terrain saturation that looks solid but is structurally compromised."</p>
+          <div class="bg-secondary-container/20 p-4 rounded-lg flex items-center gap-3">
+            <span class="material-symbols-outlined text-secondary"
+              style="font-variation-settings: 'FILL' 1;">check_circle</span>
+            <span class="text-sm font-bold text-on-secondary-container">Current Status: Optimized for Exploration</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Interactive Trail Section -->
+  <section class="py-24 bg-white">
+    <div class="container mx-auto px-8">
+      <div class="flex flex-col lg:flex-row gap-12 items-start">
+        <div class="lg:w-2/3 w-full">
+          <div class="mb-8">
+            <h2 class="text-4xl font-headline font-bold text-on-surface mb-2">Featured Expedition</h2>
+            <p class="text-outline font-headline font-bold uppercase tracking-widest text-sm">Monte Bianco South Ridge -
+              Trail #12</p>
+          </div>
+          <div class="relative rounded-2xl overflow-hidden bg-slate-200 aspect-[16/9] shadow-inner group">
+            <img alt="Map of hiking trail" class="w-full h-full object-cover"
+              data-alt="Technical topographic map of a mountain ridge with elevation contour lines and a bright sky blue highlighted trail path"
+              data-location="Mont Blanc"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUEp5wQYBHueSzYIWbO3DTW3mx8oCh4JZs7doyNulEmcMa40IRlG_nJm_lFk2GwQRgsa0zXSrbF7230NXFITH1KVXuAp6UZMF98wgZhYuopdbCheS3ue2dMidgIZGPNRlv_LnVOpc1z_YhP6vBWXdsWwt-3SboBzAbeAObR5GMwqgL4yOC5tfZdIWxGxcvRicD_y8BvO8_cEA38zQRXIYYmncU2GIaq_cxhllGbyQ7TKk2cl4TCp2FKUsG30SXozfosQDuwkp4H4s" />
+            <!-- UI Overlays -->
+            <div class="absolute top-6 left-6 flex flex-col gap-3">
+              <div class="glass-panel px-4 py-2 rounded-lg flex items-center gap-2 shadow-sm">
+                <span class="material-symbols-outlined text-primary text-lg">navigation</span>
+                <span class="text-xs font-bold font-headline uppercase">Live Tracking Active</span>
+              </div>
+            </div>
+            <div class="absolute bottom-6 left-6 right-6 flex flex-wrap gap-4">
+              <div class="glass-panel p-4 rounded-xl flex-1 min-w-[140px] shadow-lg">
+                <p class="text-[10px] uppercase font-bold text-outline mb-1">Elevation</p>
+                <div class="flex items-baseline gap-1">
+                  <span class="text-2xl font-headline font-bold text-on-surface">1,240</span>
+                  <span class="text-xs text-outline">m</span>
+                </div>
+              </div>
+              <div class="glass-panel p-4 rounded-xl flex-1 min-w-[140px] shadow-lg">
+                <p class="text-[10px] uppercase font-bold text-outline mb-1">Length</p>
+                <div class="flex items-baseline gap-1">
+                  <span class="text-2xl font-headline font-bold text-on-surface">12.4</span>
+                  <span class="text-xs text-outline">km</span>
+                </div>
+              </div>
+              <div class="glass-panel p-4 rounded-xl flex-1 min-w-[140px] shadow-lg">
+                <p class="text-[10px] uppercase font-bold text-outline mb-1">Estimated Time</p>
+                <div class="flex items-baseline gap-1">
+                  <span class="text-2xl font-headline font-bold text-on-surface">4:20</span>
+                  <span class="text-xs text-outline">h</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lg:w-1/3 w-full space-y-6">
+          <div class="bg-surface-container-lowest border border-outline-variant/30 rounded-2xl p-8 shadow-sm">
+            <h3 class="font-headline font-bold text-xl mb-6 flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary">security</span>
+              Security Dossier
+            </h3>
+            <div class="space-y-8">
+              <div>
+                <div class="flex justify-between items-center mb-2">
+                  <span class="text-sm font-bold text-on-surface-variant">Danger Index</span>
+                  <span
+                    class="px-2 py-0.5 bg-secondary-container text-on-secondary-container text-[10px] font-black uppercase rounded">Low
+                    Risk</span>
+                </div>
+                <div class="flex items-baseline gap-2">
+                  <span class="text-4xl font-headline font-bold text-on-surface">2</span>
+                  <span class="text-outline font-headline font-bold">/10</span>
+                </div>
+              </div>
+              <div class="h-px bg-surface-container-high"></div>
+              <div>
+                <span class="text-sm font-bold text-on-surface-variant block mb-2">Real-time Weather</span>
+                <div class="flex items-center gap-4">
+                  <span class="material-symbols-outlined text-4xl text-primary">cloud</span>
+                  <div>
+                    <p class="text-2xl font-headline font-bold text-on-surface">14°C</p>
+                    <p class="text-sm text-outline">Cloudy, Winds 12km/h</p>
+                  </div>
+                </div>
+              </div>
+              <div class="h-px bg-surface-container-high"></div>
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <span class="text-[10px] font-bold text-outline uppercase block mb-1">Difficulty</span>
+                  <p class="font-headline font-bold text-on-surface">Moderate</p>
+                </div>
+                <div>
+                  <span class="text-[10px] font-bold text-outline uppercase block mb-1">Traffic</span>
+                  <p class="font-headline font-bold text-secondary">Low Density</p>
+                </div>
+              </div>
+            </div>
+            <button
+              class="w-full mt-8 bg-on-surface text-white py-4 rounded-xl font-headline font-bold hover:bg-primary transition-colors flex items-center justify-center gap-2">
+              <span class="material-symbols-outlined text-xl">map</span>
+              Download Offline Map
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Key Features Section -->
+  <section class="py-24 bg-surface-container-highest">
+    <div class="container mx-auto px-8">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div class="relative">
+          <div class="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
+            <img alt="Person using GeoSentinel mobile app" class="w-full h-full object-cover"
+              data-alt="A hiker's hand holding a modern smartphone displaying a technical mountain safety app with green and blue data visualisations against a blurred mountain background"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqkqAeoUqnKW_itp5mQ2r52rfwXgz_DumDHsM3DAjukZoN1bNaOOlMfyDn44ozAh63qtysglYmL_vNrOR3k0NtshQm6LJ8zZLGQOwdmA3k0Fpd1xJkziCZ96k_aBTdkaYqm69rJqG_rOvHm3je2Iys-nIhuTZeTr03D3H8N642psfM2Ri5Ltigved3cksFz42dp9XTwfEhCWb8VYFCVNdKLRWM8zFJMxeqTCdS4XykFwStjQ9xCkigG-CUHssoCowPHNOGMdYUoAM" />
+          </div>
+          <div
+            class="absolute -bottom-10 -right-10 bg-white p-6 rounded-2xl shadow-xl max-w-[240px] hidden md:block border border-outline-variant/20">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="w-10 h-10 bg-secondary rounded-full flex items-center justify-center">
+                <span class="material-symbols-outlined text-white"
+                  style="font-variation-settings: 'FILL' 1;">bolt</span>
+              </div>
+              <span class="font-headline font-bold text-sm">Instant Alert System</span>
+            </div>
+            <p class="text-xs text-on-surface-variant leading-relaxed">Receive push notifications if terrain moisture
+              levels cross critical safety thresholds while you're on the move.</p>
+          </div>
+        </div>
+        <div>
+          <span class="text-primary font-headline font-bold uppercase tracking-widest text-sm mb-4 block">Engineered for
+            the Wild</span>
+          <h2 class="text-4xl font-headline font-bold text-on-surface mb-8">Technical Reliability Meets Natural
+            Intuition</h2>
+          <ul class="space-y-8">
+            <li class="flex gap-6">
+              <div
+                class="shrink-0 w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center border border-outline-variant/10">
+                <span class="material-symbols-outlined text-primary">smartphone</span>
+              </div>
+              <div>
+                <h4 class="font-headline font-bold text-lg mb-1">Mobile-First Security</h4>
+                <p class="text-on-surface-variant text-sm">Lightweight, low-energy app designed for trailside access
+                  even in areas with limited connectivity using cached orbital data.</p>
+              </div>
+            </li>
+            <li class="flex gap-6">
+              <div
+                class="shrink-0 w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center border border-outline-variant/10">
+                <span class="material-symbols-outlined text-primary">eco</span>
+              </div>
+              <div>
+                <h4 class="font-headline font-bold text-lg mb-1">Minimalist &amp; Natural UI</h4>
+                <p class="text-on-surface-variant text-sm">An earthy color palette that integrates seamlessly with your
+                  environment, reducing eye strain and maximizing data clarity.</p>
+              </div>
+            </li>
+            <li class="flex gap-6">
+              <div
+                class="shrink-0 w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center border border-outline-variant/10">
+                <span class="material-symbols-outlined text-primary">hub</span>
+              </div>
+              <div>
+                <h4 class="font-headline font-bold text-lg mb-1">Edge Computing Analysis</h4>
+                <p class="text-on-surface-variant text-sm">Processing landslide vulnerability data on-device to ensure
+                  your safety isn't dependent on a cloud connection.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Packing & Community Grid -->
+  <section class="py-24 bg-surface">
+    <div class="container mx-auto px-8">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+        <!-- Packing List -->
+        <div class="md:col-span-4 bg-surface-container-low p-10 rounded-3xl">
+          <h3 class="font-headline font-bold text-2xl mb-8 flex items-center gap-2">
+            <span class="material-symbols-outlined text-secondary">backpack</span>
+            Preparation
+          </h3>
+          <ul class="space-y-6">
+            <li class="flex items-start gap-4">
+              <span class="material-symbols-outlined text-outline text-sm pt-1">check_box_outline_blank</span>
+              <div>
+                <span class="font-bold text-on-surface block">Waterproof Membrane Shell</span>
+                <p class="text-xs text-outline">Required for Index &gt; 4</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <span class="material-symbols-outlined text-outline text-sm pt-1">check_box_outline_blank</span>
+              <div>
+                <span class="font-bold text-on-surface block">Thermal Base Layers</span>
+                <p class="text-xs text-outline">Synthetic or Merino Wool</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <span class="material-symbols-outlined text-outline text-sm pt-1">check_box_outline_blank</span>
+              <div>
+                <span class="font-bold text-on-surface block">Emergency Bivvy</span>
+                <p class="text-xs text-outline">Standard alpine security</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- Community Grid -->
+        <div class="md:col-span-8">
+          <div class="flex justify-between items-end mb-8">
+            <div>
+              <h3 class="font-headline font-bold text-2xl mb-2">Trail Sentinel Community</h3>
+              <p class="text-on-surface-variant">Real-world updates from the field.</p>
+            </div>
+            <button class="text-primary font-bold text-sm flex items-center gap-1 hover:underline">View All Reviews
+              <span class="material-symbols-outlined text-sm">arrow_forward</span></button>
+          </div>
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div class="aspect-square rounded-2xl overflow-hidden relative group">
+              <img alt="Community photo 1" class="w-full h-full object-cover transition-transform group-hover:scale-110"
+                data-alt="A hiker standing on a rocky peak overlooking a sea of clouds with snow-capped mountains in the distance"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfbS6Q5T1MzabIWNLfSzQykrm9tQ5M9g2SL1o7VUaGbmNPJxjQcXXSHmbq8mRz1W0Jc1IZuLsmYK4tcVMOBdnn8NzUqBTdCdMNtnPIKoUYWEF3bOj1bXMN9vfh6ccGweCTHguiqtGR9Gv4AQpXq-82qYfo7Ky7ocwTY-eHVs4i5FiNAovP-ZwNKwS2Tv5vpyLrFJIDdVBQ3OPaWku1jPUrMQ6Z0erLufH5Gh2fDioaQNPfPMtaUg1cOlpEnrFtWQHTVIl5u-n2Y6w" />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                <p class="text-white text-[10px] font-bold">@marco_trail</p>
+                <div class="flex text-secondary-container">
+                  <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                </div>
+              </div>
+            </div>
+            <div class="aspect-square rounded-2xl overflow-hidden relative group">
+              <img alt="Community photo 2" class="w-full h-full object-cover transition-transform group-hover:scale-110"
+                data-alt="Aerial view of a narrow hiking path winding through a deep green valley with a turquoise river"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZ-bwwKtdfnHA3teN-FlOp4dA3WhlFcg6SDRPfmcrDc3ohQzUoBzWindO7dHScVKgqmWkwA0wRAnZOuT0arhD88Xbq1eqsceSW9E6ZZ_a7P2jtN9EwQ7fI-1TjjF-wht3x0OJWoJlQN8THigAXgIqS9jpyFPthFphSTS3J9zViA4P6mo8zIpvW4tsrhRuiaN3qgpWWIjhVohc0a5cFbmoSNzDZ5EWQPPoG-2avsfJgpuFOOpElzpBo07DfCYU_COqdxyhaRCb6rEM" />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                <p class="text-white text-[10px] font-bold">@earth_lens</p>
+                <div class="flex text-secondary-container">
+                  <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                </div>
+              </div>
+            </div>
+            <div class="aspect-square rounded-2xl overflow-hidden relative group hidden md:block">
+              <img alt="Community photo 3" class="w-full h-full object-cover transition-transform group-hover:scale-110"
+                data-alt="Close up of high-tech hiking boots on a rugged stony terrain with bright wild flowers"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPu6yoMF0kUDTMtma1BpoOdocZBay7kmLzBI8qEB1Z3MV--mzybYw2lsqY-SFCAKbmyqYksDPGGrDsKNdwPKF4cdovUUmbRet9HFitiitE5nBwktjRIXKsG1sx_-3Y0peifli2KGv3GWpIicYs-ddwD1bBjxcdOmS41vc4fd3hBRa_UL6kxw3ih60lzjqLRcfAcIS_P2y3akpp71c4F9618dh7t_XmMLSjv4U7j82D4USYy-1fZVku-3_dPDsFJLadXf5gJPbnALM" />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                <p class="text-white text-[10px] font-bold">@alpine_pro</p>
+                <div class="flex text-secondary-container">
+                  <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer class="bg-slate-50 dark:bg-slate-950 w-full py-12 px-8">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-7xl mx-auto">
+      <div class="col-span-1 md:col-span-1">
+        <div class="text-lg font-bold text-slate-900 dark:text-slate-100 font-headline mb-4">GeoSentinel Cassini</div>
+        <p class="text-slate-500 text-sm antialiased font-body">Orbital Intelligence for Terrestrial Security.</p>
+      </div>
+      <div class="space-y-4">
+        <h5 class="text-slate-900 dark:text-slate-100 font-bold text-sm uppercase tracking-widest">Platform</h5>
+        <nav class="flex flex-col space-y-2">
+          <a class="text-slate-500 hover:text-sky-600 transition-colors text-sm font-body antialiased" href="#">Site
+            Map</a>
+          <a class="text-slate-500 hover:text-sky-600 transition-colors text-sm font-body antialiased" href="#">Privacy
+            Policy</a>
+          <a class="text-slate-500 hover:text-sky-600 transition-colors text-sm font-body antialiased" href="#">Terms of
+            Service</a>
+        </nav>
+      </div>
+      <div class="space-y-4">
+        <h5 class="text-slate-900 dark:text-slate-100 font-bold text-sm uppercase tracking-widest">Data Sources</h5>
+        <nav class="flex flex-col space-y-2">
+          <a class="text-slate-500 hover:text-sky-600 transition-colors text-sm font-body antialiased"
+            href="#">Meteorological Data</a>
+          <a class="text-slate-500 hover:text-sky-600 transition-colors text-sm font-body antialiased" href="#">EO
+            Sources</a>
+          <a class="text-slate-500 hover:text-sky-600 transition-colors text-sm font-body antialiased" href="#">IFFI
+            Registry</a>
+        </nav>
+      </div>
+      <div class="space-y-4">
+        <h5 class="text-slate-900 dark:text-slate-100 font-bold text-sm uppercase tracking-widest">Contact</h5>
+        <nav class="flex flex-col space-y-2">
+          <a class="text-slate-500 hover:text-sky-600 transition-colors text-sm font-body antialiased" href="#">Contact
+            Us</a>
+          <div class="flex gap-4 mt-2">
+            <span class="material-symbols-outlined text-slate-400 cursor-pointer hover:text-primary">language</span>
+            <span class="material-symbols-outlined text-slate-400 cursor-pointer hover:text-primary">public</span>
+            <span class="material-symbols-outlined text-slate-400 cursor-pointer hover:text-primary">share</span>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-slate-200 dark:border-slate-800 text-center">
+      <p class="text-slate-500 text-sm antialiased font-body">© 2024 GeoSentinel Cassini. Orbital Intelligence for
+        Terrestrial Security.</p>
+    </div>
+  </footer>
+</body>
+
+</html>

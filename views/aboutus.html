@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>About Us | GeoSentinel</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>About Us | GeoSentinel</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -71,13 +77,15 @@
             },
         }
     </script>
-<style>
+    <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
+
         .story-container {
             position: relative;
         }
+
         .winding-path {
             position: absolute;
             top: 0;
@@ -90,94 +98,127 @@
         }
     </style>
 </head>
-<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container">
-<!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm dark:shadow-none border-b border-slate-200/50 dark:border-slate-800/50">
-<div class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto h-20">
-<a href="home.html" class="text-2xl font-black text-sky-900 dark:text-sky-100 font-headline tracking-tight">GeoSentinel</a>
-<div class="hidden md:flex space-x-8 items-center">
-<a class="text-slate-600 dark:text-slate-400 font-headline font-bold tracking-tight hover:text-sky-500 dark:hover:text-sky-300 transition-colors" href="home.html">Explore Trails</a>
-<a class="text-slate-600 dark:text-slate-400 font-headline font-bold tracking-tight hover:text-sky-500 dark:hover:text-sky-300 transition-colors" href="howitworks.html">How It Works</a>
-<a class="text-sky-600 dark:text-sky-400 border-b-2 border-sky-600 font-headline font-bold tracking-tight py-1 transition-all" href="aboutus.html">About Us</a>
-</div>
-<div class="flex items-center gap-4">
-<button class="bg-gradient-to-br from-primary to-primary-container text-white px-6 py-2.5 rounded-lg font-headline font-bold transition-all active:opacity-80 active:scale-95 shadow-md">Get Trail Security</button>
-</div>
-</div>
-</nav>
-<main class="pt-32 pb-48">
-<div class="max-w-4xl mx-auto px-6">
-<div class="text-center mb-24">
-<h1 class="font-headline text-4xl md:text-5xl font-bold text-on-surface mb-4">Our Evolution</h1>
-<p class="text-on-surface-variant font-light">A winding journey from concept to field validation.</p>
-</div>
-<div class="story-container relative space-y-32">
-<!-- SVG Winding Path background -->
-<svg class="winding-path hidden md:block" fill="none" viewbox="0 0 800 1600" xmlns="http://www.w3.org/2000/svg">
-<path class="text-primary/30" d="M400 50 C 600 150, 200 250, 450 350 C 700 450, 300 550, 350 700 C 400 850, 600 950, 450 1100 C 300 1250, 500 1350, 400 1500" stroke="currentColor" stroke-dasharray="8 8" stroke-width="2"></path>
-</svg>
-<!-- Stage 1 -->
-<div class="relative z-10 flex flex-col items-center md:items-start md:ml-20">
-<div class="w-full max-w-[380px] p-2 bg-white shadow-xl rounded-sm transform rotate-[-3deg] hover:rotate-0 transition-transform duration-300">
-<img alt="10th Cassini Hackathon" class="w-full aspect-[4/3] object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0uhCY4u86WTsZ0pMOeP5mqH0jWMfJ6rdtT8bCjnMHcXmz0PugsdScmypP3lb8mAaS-rJWlFeoxkT6BmLy7iGQzyZNy4lvvwPKyI3ll3P-pMwU9futiKelRMkrUMBswWfMSYs1-HI3e-_OL9DHeIbKVpnp_A1bSDkK5NLZ1sUO0TuqN32PnxKTJPngRkxg9KCbqC9xOERRH86qjdoHacQYSVxUTlmLe_YUiB6f3bpB449zkQ90qTFQBM9mgJH5d54EqP3Oo89olDIMQ"/>
-<p class="mt-4 font-headline text-lg font-bold text-on-surface italic text-center">10th Cassini Hackathon (2025)</p>
-</div>
-</div>
-<!-- Stage 2 -->
-<div class="relative z-10 flex flex-col items-center md:items-end md:mr-20">
-<div class="w-full max-w-[360px] p-2 bg-white shadow-xl rounded-sm transform rotate-[2deg] hover:rotate-0 transition-transform duration-300">
-<img alt="Soil Humidity Analysis" class="w-full aspect-[4/3] object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0uhWXdc_AZBw68CbXduAvq5ccB0jvufQSjv1SqOV-Us8ahQ7eaMa4REshoZZn5NfkrQxA2ctYZkoDBhA_Got_IdvfnNuk7HB2UIszRi10JgU2SShRLKpnBT0S3weiXq5G9mMS3GieExm0oySGO1lw9eIk-JcbOwTJulA3R6WZPt7BYOI3lBer_sabWLTRN-Ze5onkbU2zUIWJlXvlUctTXOVCre8UwEe_OHtckjEhOaSfMKih0KlsAP81rDm67qXh73EBX77VpnEcA"/>
-<p class="mt-4 font-headline text-lg font-bold text-on-surface italic text-center">Soil Humidity Analysis</p>
-</div>
-</div>
-<!-- Stage 3 -->
-<div class="relative z-10 flex flex-col items-center md:items-start md:ml-40">
-<div class="w-full max-w-[340px] p-2 bg-white shadow-xl rounded-sm transform rotate-[-2deg] hover:rotate-0 transition-transform duration-300">
-<img alt="Landslide History Tests" class="w-full aspect-[4/3] object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0ugi1b9bh5qXqHi8aYekILwoBUvCjEXplgLrqbqdlMbLFK45qWOmvetv3cuuefpK9BYXbMhnt53qjGvpkW4fGStERsGs3rVguZoQn4deeQ4-uBKwegJAIbuZ0FNRYpq-9PeaWBhUqlL67FQidnXDWGty3bU4vITjs4dibkM_sq9PJbVbEXVRHJXpgXkYEtpZ3xnr4NCSOm82Bi3MvV_vIz0pom6fup4fzN62amNLncg-zK7dFiL0V2KYOrAThyXl8luyFx3aJwPtDg"/>
-<p class="mt-4 font-headline text-lg font-bold text-on-surface italic text-center">Landslide History Tests</p>
-</div>
-</div>
-<!-- Stage 4 -->
-<div class="relative z-10 flex flex-col items-center md:items-center">
-<div class="w-full max-w-[380px] p-2 bg-white shadow-xl rounded-sm transform rotate-[3deg] hover:rotate-0 transition-transform duration-300">
-<img alt="Weather Service Integration" class="w-full aspect-[4/3] object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0uhdQ6vTDt0Gx5NOzcHTJGA7hD5olOG-QviGs5QyUWfQlKdyaLhT9uDcfw7lV5JaRdBnQQ_TVkp8WBigh-T3u6o_TcrS54KaVt7Bi_xBExFoVTgjeNMS8-tjD__oxdBXSqVSgThZq8Bk2AAtox8FqZVJEtOWxnYHYkSS92nj_F0-4delXRjdAyNrbMZCbKyz5M8ZbajzHpPShaFUm2VeGnK1PUxhJh3DKxyA9lOfAgeK6t7iSajWVnyi2qceipVFL5BTUREKgwgpyQ"/>
-<p class="mt-4 font-headline text-lg font-bold text-on-surface italic text-center">Weather Service Integration</p>
-</div>
-</div>
-<!-- Stage 5 -->
-<div class="relative z-10 flex flex-col items-center md:items-end md:mr-32">
-<div class="w-full max-w-[400px] p-2 bg-white shadow-xl rounded-sm transform rotate-[-1deg] hover:rotate-0 transition-transform duration-300">
-<img alt="Field Validation: Lame Rosse" class="w-full aspect-[4/3] object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0uhC47Pm5bRKTa4i322BcOs1W7gA-8ZczGymqTf5T_fSEvqUpr2-hUwjiXwXtHNqrRPStbKepXtUuKNVd3tPSdvGeanjne4tpjG0k6XEWmws1ASir7xjmPRsdQzDO-ag5MDSkbFOoI7YbsVBkb4sjcYM1UXoJtKoQTNDA-zZp80XH37tGeI5MWmyrCNWMDqM_-lGKXDKI7Ex6dJM5GSNhJO9iBTgFHxrJvdaYWndhFpxlCWL2M2GCUFk1gYwVWr7JyNHctNVFKHKRw"/>
-<div class="mt-4 text-center">
-<p class="font-headline text-lg font-bold text-on-surface italic">Field Validation: Lame Rosse</p>
-<span class="text-sm font-bold text-primary block mt-1">2026 Milestone</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</main>
-<!-- Footer -->
-<footer class="w-full py-12 px-8 bg-slate-50 dark:bg-slate-950 flex flex-col md:flex-row justify-between items-center gap-8 font-['Inter'] text-xs uppercase tracking-widest">
-<div class="flex flex-col items-center md:items-start gap-4">
-<div class="font-['Space_Grotesk'] font-black text-slate-900 dark:text-slate-100 text-xl">
+
+<body
+    class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container">
+    <!-- TopNavBar -->
+    <nav
+        class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm dark:shadow-none border-b border-slate-200/50 dark:border-slate-800/50">
+        <div class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto h-20">
+            <a href="index.html"
+                class="text-2xl font-black text-sky-900 dark:text-sky-100 font-headline tracking-tight">GeoSentinel</a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a class="text-slate-600 dark:text-slate-400 font-headline font-bold tracking-tight hover:text-sky-500 dark:hover:text-sky-300 transition-colors"
+                    href="index.html">Explore Trails</a>
+                <a class="text-slate-600 dark:text-slate-400 font-headline font-bold tracking-tight hover:text-sky-500 dark:hover:text-sky-300 transition-colors"
+                    href="howitworks.html">How It Works</a>
+                <a class="text-sky-600 dark:text-sky-400 border-b-2 border-sky-600 font-headline font-bold tracking-tight py-1 transition-all"
+                    href="aboutus.html">About Us</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <button
+                    class="bg-gradient-to-br from-primary to-primary-container text-white px-6 py-2.5 rounded-lg font-headline font-bold transition-all active:opacity-80 active:scale-95 shadow-md">Try
+                    the MVP (lago di Fiastra area)</button>
+            </div>
+        </div>
+    </nav>
+    <main class="pt-32 pb-48">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-24">
+                <h1 class="font-headline text-4xl md:text-5xl font-bold text-on-surface mb-4">Our Evolution</h1>
+                <p class="text-on-surface-variant font-light">A winding journey from concept to field validation.</p>
+            </div>
+            <div class="story-container relative space-y-32">
+                <!-- SVG Winding Path background -->
+                <svg class="winding-path hidden md:block" fill="none" viewbox="0 0 800 1600"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path class="text-primary/30"
+                        d="M400 50 C 600 150, 200 250, 450 350 C 700 450, 300 550, 350 700 C 400 850, 600 950, 450 1100 C 300 1250, 500 1350, 400 1500"
+                        stroke="currentColor" stroke-dasharray="8 8" stroke-width="2"></path>
+                </svg>
+                <!-- Stage 1 -->
+                <div class="relative z-10 flex flex-col items-center md:items-start md:ml-20">
+                    <div
+                        class="w-full max-w-[380px] p-2 bg-white shadow-xl rounded-sm transform rotate-[-3deg] hover:rotate-0 transition-transform duration-300">
+                        <img alt="10th Cassini Hackathon" class="w-full aspect-[4/3] object-cover"
+                            src="https://lh3.googleusercontent.com/aida/ADBb0uhCY4u86WTsZ0pMOeP5mqH0jWMfJ6rdtT8bCjnMHcXmz0PugsdScmypP3lb8mAaS-rJWlFeoxkT6BmLy7iGQzyZNy4lvvwPKyI3ll3P-pMwU9futiKelRMkrUMBswWfMSYs1-HI3e-_OL9DHeIbKVpnp_A1bSDkK5NLZ1sUO0TuqN32PnxKTJPngRkxg9KCbqC9xOERRH86qjdoHacQYSVxUTlmLe_YUiB6f3bpB449zkQ90qTFQBM9mgJH5d54EqP3Oo89olDIMQ" />
+                        <p class="mt-4 font-headline text-lg font-bold text-on-surface italic text-center">10th Cassini
+                            Hackathon (2025)</p>
+                    </div>
+                </div>
+                <!-- Stage 2 -->
+                <div class="relative z-10 flex flex-col items-center md:items-end md:mr-20">
+                    <div
+                        class="w-full max-w-[360px] p-2 bg-white shadow-xl rounded-sm transform rotate-[2deg] hover:rotate-0 transition-transform duration-300">
+                        <img alt="Soil Humidity Analysis" class="w-full aspect-[4/3] object-cover"
+                            src="https://lh3.googleusercontent.com/aida/ADBb0uhWXdc_AZBw68CbXduAvq5ccB0jvufQSjv1SqOV-Us8ahQ7eaMa4REshoZZn5NfkrQxA2ctYZkoDBhA_Got_IdvfnNuk7HB2UIszRi10JgU2SShRLKpnBT0S3weiXq5G9mMS3GieExm0oySGO1lw9eIk-JcbOwTJulA3R6WZPt7BYOI3lBer_sabWLTRN-Ze5onkbU2zUIWJlXvlUctTXOVCre8UwEe_OHtckjEhOaSfMKih0KlsAP81rDm67qXh73EBX77VpnEcA" />
+                        <p class="mt-4 font-headline text-lg font-bold text-on-surface italic text-center">Soil Humidity
+                            Analysis</p>
+                    </div>
+                </div>
+                <!-- Stage 3 -->
+                <div class="relative z-10 flex flex-col items-center md:items-start md:ml-40">
+                    <div
+                        class="w-full max-w-[340px] p-2 bg-white shadow-xl rounded-sm transform rotate-[-2deg] hover:rotate-0 transition-transform duration-300">
+                        <img alt="Landslide History Tests" class="w-full aspect-[4/3] object-cover"
+                            src="https://lh3.googleusercontent.com/aida/ADBb0ugi1b9bh5qXqHi8aYekILwoBUvCjEXplgLrqbqdlMbLFK45qWOmvetv3cuuefpK9BYXbMhnt53qjGvpkW4fGStERsGs3rVguZoQn4deeQ4-uBKwegJAIbuZ0FNRYpq-9PeaWBhUqlL67FQidnXDWGty3bU4vITjs4dibkM_sq9PJbVbEXVRHJXpgXkYEtpZ3xnr4NCSOm82Bi3MvV_vIz0pom6fup4fzN62amNLncg-zK7dFiL0V2KYOrAThyXl8luyFx3aJwPtDg" />
+                        <p class="mt-4 font-headline text-lg font-bold text-on-surface italic text-center">Landslide
+                            History Tests</p>
+                    </div>
+                </div>
+                <!-- Stage 4 -->
+                <div class="relative z-10 flex flex-col items-center md:items-center">
+                    <div
+                        class="w-full max-w-[380px] p-2 bg-white shadow-xl rounded-sm transform rotate-[3deg] hover:rotate-0 transition-transform duration-300">
+                        <img alt="Weather Service Integration" class="w-full aspect-[4/3] object-cover"
+                            src="https://lh3.googleusercontent.com/aida/ADBb0uhdQ6vTDt0Gx5NOzcHTJGA7hD5olOG-QviGs5QyUWfQlKdyaLhT9uDcfw7lV5JaRdBnQQ_TVkp8WBigh-T3u6o_TcrS54KaVt7Bi_xBExFoVTgjeNMS8-tjD__oxdBXSqVSgThZq8Bk2AAtox8FqZVJEtOWxnYHYkSS92nj_F0-4delXRjdAyNrbMZCbKyz5M8ZbajzHpPShaFUm2VeGnK1PUxhJh3DKxyA9lOfAgeK6t7iSajWVnyi2qceipVFL5BTUREKgwgpyQ" />
+                        <p class="mt-4 font-headline text-lg font-bold text-on-surface italic text-center">Weather
+                            Service Integration</p>
+                    </div>
+                </div>
+                <!-- Stage 5 -->
+                <div class="relative z-10 flex flex-col items-center md:items-end md:mr-32">
+                    <div
+                        class="w-full max-w-[400px] p-2 bg-white shadow-xl rounded-sm transform rotate-[-1deg] hover:rotate-0 transition-transform duration-300">
+                        <img alt="Field Validation: Lame Rosse" class="w-full aspect-[4/3] object-cover"
+                            src="https://lh3.googleusercontent.com/aida/ADBb0uhC47Pm5bRKTa4i322BcOs1W7gA-8ZczGymqTf5T_fSEvqUpr2-hUwjiXwXtHNqrRPStbKepXtUuKNVd3tPSdvGeanjne4tpjG0k6XEWmws1ASir7xjmPRsdQzDO-ag5MDSkbFOoI7YbsVBkb4sjcYM1UXoJtKoQTNDA-zZp80XH37tGeI5MWmyrCNWMDqM_-lGKXDKI7Ex6dJM5GSNhJO9iBTgFHxrJvdaYWndhFpxlCWL2M2GCUFk1gYwVWr7JyNHctNVFKHKRw" />
+                        <div class="mt-4 text-center">
+                            <p class="font-headline text-lg font-bold text-on-surface italic">Field Validation: Lame
+                                Rosse</p>
+                            <span class="text-sm font-bold text-primary block mt-1">2026 Milestone</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer
+        class="w-full py-12 px-8 bg-slate-50 dark:bg-slate-950 flex flex-col md:flex-row justify-between items-center gap-8 font-['Inter'] text-xs uppercase tracking-widest">
+        <div class="flex flex-col items-center md:items-start gap-4">
+            <div class="font-['Space_Grotesk'] font-black text-slate-900 dark:text-slate-100 text-xl">
                 GeoSentinel
             </div>
-<p class="text-slate-500 lowercase normal-case">© 2024 GeoSentinel Orbital Security. All rights reserved. Data latency &lt; 20ms.</p>
-</div>
-<div class="flex gap-12">
-<div class="flex flex-col gap-3">
-<a class="text-slate-500 hover:text-cyan-500 transition-colors" href="#">Privacy Protocol</a>
-<a class="text-slate-500 hover:text-cyan-500 transition-colors" href="#">Terms of Orbit</a>
-</div>
-<div class="flex flex-col gap-3">
-<a class="text-slate-500 hover:text-cyan-500 transition-colors" href="#">Satellite API</a>
-<a class="text-slate-500 hover:text-cyan-500 transition-colors" href="#">Support</a>
-</div>
-</div>
-<div class="flex gap-4">
-<span class="material-symbols-outlined text-slate-400 hover:text-primary cursor-pointer transition-colors">share</span>
-<span class="material-symbols-outlined text-slate-400 hover:text-primary cursor-pointer transition-colors">rss_feed</span>
-</div>
-</footer>
-</body></html>
+            <p class="text-slate-500 lowercase normal-case">© 2024 GeoSentinel Orbital Security. All rights reserved.
+                Data latency &lt; 20ms.</p>
+        </div>
+        <div class="flex gap-12">
+            <div class="flex flex-col gap-3">
+                <a class="text-slate-500 hover:text-cyan-500 transition-colors" href="#">Privacy Protocol</a>
+                <a class="text-slate-500 hover:text-cyan-500 transition-colors" href="#">Terms of Orbit</a>
+            </div>
+            <div class="flex flex-col gap-3">
+                <a class="text-slate-500 hover:text-cyan-500 transition-colors" href="#">Satellite API</a>
+                <a class="text-slate-500 hover:text-cyan-500 transition-colors" href="#">Support</a>
+            </div>
+        </div>
+        <div class="flex gap-4">
+            <span
+                class="material-symbols-outlined text-slate-400 hover:text-primary cursor-pointer transition-colors">share</span>
+            <span
+                class="material-symbols-outlined text-slate-400 hover:text-primary cursor-pointer transition-colors">rss_feed</span>
+        </div>
+    </footer>
+</body>
+
+</html>

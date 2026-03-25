@@ -1,284 +1,344 @@
 <!DOCTYPE html>
 
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>How It Works | GeoSentinel</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "on-secondary-fixed-variant": "#00522f",
-              "surface-variant": "#e1e3e4",
-              "inverse-primary": "#82cfff",
-              "surface-tint": "#00658d",
-              "inverse-surface": "#2e3132",
-              "on-background": "#191c1d",
-              "on-surface": "#191c1d",
-              "outline": "#6e7881",
-              "on-surface-variant": "#3e4850",
-              "primary-fixed": "#c6e7ff",
-              "primary": "#00658d",
-              "surface-container-lowest": "#ffffff",
-              "on-tertiary": "#ffffff",
-              "inverse-on-surface": "#f0f1f2",
-              "surface-container-high": "#e7e8e9",
-              "surface-container": "#edeeef",
-              "surface-container-low": "#f3f4f5",
-              "secondary-fixed": "#7afbb1",
-              "surface": "#f8f9fa",
-              "on-error-container": "#93000a",
-              "on-tertiary-fixed": "#181c1d",
-              "tertiary-container": "#a0a3a4",
-              "on-tertiary-container": "#363a3b",
-              "on-primary-fixed": "#001e2d",
-              "on-secondary-container": "#007444",
-              "outline-variant": "#bdc8d1",
-              "on-tertiary-fixed-variant": "#434748",
-              "tertiary-fixed-dim": "#c4c7c8",
-              "secondary-fixed-dim": "#5cde97",
-              "error-container": "#ffdad6",
-              "error": "#ba1a1a",
-              "primary-fixed-dim": "#82cfff",
-              "tertiary-fixed": "#e0e3e4",
-              "surface-dim": "#d9dadb",
-              "surface-container-highest": "#e1e3e4",
-              "on-primary-fixed-variant": "#004c6b",
-              "primary-container": "#00aeef",
-              "surface-bright": "#f8f9fa",
-              "on-error": "#ffffff",
-              "background": "#f8f9fa",
-              "tertiary": "#5b5f60",
-              "on-primary-container": "#003e58",
-              "secondary-container": "#7afbb1",
-              "secondary": "#006d40",
-              "on-secondary-fixed": "#002110",
-              "on-primary": "#ffffff",
-              "on-secondary": "#ffffff"
-            },
-            fontFamily: {
-              "headline": ["Space Grotesk"],
-              "body": ["Inter"],
-              "label": ["Inter"]
-            },
-            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+<html class="light" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>How It Works | GeoSentinel</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-secondary-fixed-variant": "#00522f",
+            "surface-variant": "#e1e3e4",
+            "inverse-primary": "#82cfff",
+            "surface-tint": "#00658d",
+            "inverse-surface": "#2e3132",
+            "on-background": "#191c1d",
+            "on-surface": "#191c1d",
+            "outline": "#6e7881",
+            "on-surface-variant": "#3e4850",
+            "primary-fixed": "#c6e7ff",
+            "primary": "#00658d",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "inverse-on-surface": "#f0f1f2",
+            "surface-container-high": "#e7e8e9",
+            "surface-container": "#edeeef",
+            "surface-container-low": "#f3f4f5",
+            "secondary-fixed": "#7afbb1",
+            "surface": "#f8f9fa",
+            "on-error-container": "#93000a",
+            "on-tertiary-fixed": "#181c1d",
+            "tertiary-container": "#a0a3a4",
+            "on-tertiary-container": "#363a3b",
+            "on-primary-fixed": "#001e2d",
+            "on-secondary-container": "#007444",
+            "outline-variant": "#bdc8d1",
+            "on-tertiary-fixed-variant": "#434748",
+            "tertiary-fixed-dim": "#c4c7c8",
+            "secondary-fixed-dim": "#5cde97",
+            "error-container": "#ffdad6",
+            "error": "#ba1a1a",
+            "primary-fixed-dim": "#82cfff",
+            "tertiary-fixed": "#e0e3e4",
+            "surface-dim": "#d9dadb",
+            "surface-container-highest": "#e1e3e4",
+            "on-primary-fixed-variant": "#004c6b",
+            "primary-container": "#00aeef",
+            "surface-bright": "#f8f9fa",
+            "on-error": "#ffffff",
+            "background": "#f8f9fa",
+            "tertiary": "#5b5f60",
+            "on-primary-container": "#003e58",
+            "secondary-container": "#7afbb1",
+            "secondary": "#006d40",
+            "on-secondary-fixed": "#002110",
+            "on-primary": "#ffffff",
+            "on-secondary": "#ffffff"
           },
+          fontFamily: {
+            "headline": ["Space Grotesk"],
+            "body": ["Inter"],
+            "label": ["Inter"]
+          },
+          borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
         },
-      }
-    </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
-        .data-gradient {
-            background: linear-gradient(135deg, #00658d 0%, #00aeef 100%);
-        }
-    </style>
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .data-gradient {
+      background: linear-gradient(135deg, #00658d 0%, #00aeef 100%);
+    }
+  </style>
 </head>
+
 <body class="bg-background font-body text-on-background min-h-screen flex flex-col">
-<!-- Top Navigation Bar -->
-<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm dark:shadow-none border-b border-slate-200/50 dark:border-slate-800/50">
-<div class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto h-20">
-<a href="home.html" class="text-2xl font-black text-sky-900 dark:text-sky-100 font-headline tracking-tight">GeoSentinel</a>
-<div class="hidden md:flex space-x-8 items-center">
-<a class="text-slate-600 dark:text-slate-400 font-headline font-bold tracking-tight hover:text-sky-500 dark:hover:text-sky-300 transition-colors" href="home.html">Explore Trails</a>
-<a class="text-sky-600 dark:text-sky-400 border-b-2 border-sky-600 font-headline font-bold tracking-tight py-1 transition-all" href="howitworks.html">How It Works</a>
-<a class="text-slate-600 dark:text-slate-400 font-headline font-bold tracking-tight hover:text-sky-500 dark:hover:text-sky-300 transition-colors" href="aboutus.html">About Us</a>
-</div>
-<div class="flex items-center gap-4">
-<button class="bg-gradient-to-br from-primary to-primary-container text-white px-6 py-2.5 rounded-lg font-headline font-bold transition-all active:opacity-80 active:scale-95 shadow-md">Get Trail Security</button>
-</div>
-</div>
-</nav>
-<main class="flex-grow pt-24 pb-20">
-<!-- Hero Section -->
-<section class="max-w-screen-2xl mx-auto px-6 mb-20">
-<div class="relative rounded-xl overflow-hidden min-h-[400px] flex items-center p-12 bg-surface-container-low">
-<img class="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-overlay" data-alt="Abstract satellite view of Earth at night with glowing blue data connectivity lines and digital terrain mesh" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCge_9g12UysdF-4Cxeb3JsVo9JXEDnuOx7lhsD7LJG_-vG3cC1iCgyGdb6CWTaxAwkO4wvLkjNbuE0UpSDa7_MWCVvrY11P6KPVlU4Zbbj-iJg60jlF-3YjRFujoT-xaYxNIjSh9d_K5EMUAPPqtM8xIGGgHgJz5MRNId-OYw87cbGl24csY_uqXW2_NeHB_gSRzYr726EX3Mq3rijQmOi63tFR39DSxN5l7_nKSKKRhw_T3L4eMTR2mZq_ZkZeQ037eY8KRQ6t1o"/>
-<div class="relative z-10 max-w-2xl">
-<span class="inline-block px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label text-xs font-bold mb-6 tracking-widest uppercase">
-                        Protocol Architecture
-                    </span>
-<h1 class="font-headline text-5xl md:text-7xl font-bold tracking-tighter mb-6 text-on-surface">
-                        Precision Risk <span class="text-primary-container">Telemetry</span>
-</h1>
-<p class="text-on-surface-variant text-xl leading-relaxed font-light">
-                        GeoSentinel calculates a geo-hydrological risk index for hiking trails by combining three primary data sources into a unified tactical assessment.
-                    </p>
-</div>
-</div>
-</section>
-<!-- Technical Convergence Section -->
-<section class="max-w-screen-2xl mx-auto px-6">
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-<!-- Data Convergence Visualization -->
-<div class="lg:col-span-7 relative h-[600px] flex items-center justify-center">
-<!-- Central Hub -->
-<div class="relative z-20 w-48 h-48 rounded-full bg-white shadow-2xl flex flex-col items-center justify-center border-4 border-primary-container/30">
-<div class="absolute inset-0 rounded-full border border-dashed border-primary-container/50 animate-[spin_10s_linear_infinite]"></div>
-<span class="material-symbols-outlined text-primary text-5xl mb-2" data-icon="hub">hub</span>
-<div class="font-headline text-center leading-tight">
-<span class="block text-xs uppercase tracking-widest text-outline">Index Output</span>
-<span class="block font-bold text-xl text-primary">RISK RATIO</span>
-</div>
-</div>
-<!-- Source 1 Connection -->
-<div class="absolute top-10 left-10 w-64 glass-card p-6 rounded-xl border border-white/50 shadow-sm transition-transform hover:-translate-y-2 group">
-<div class="flex items-center gap-3 mb-4">
-<div class="w-10 h-10 rounded bg-slate-100 flex items-center justify-center">
-<span class="material-symbols-outlined text-slate-700" data-icon="history">history</span>
-</div>
-<h3 class="font-headline font-bold text-slate-800">Source 01</h3>
-</div>
-<h4 class="font-headline text-lg font-bold mb-2">Historical Landslide Risk</h4>
-<p class="text-sm text-on-surface-variant mb-4">Derived from comprehensive IFFI data repositories for geospatial precedence.</p>
-<div class="h-1 w-full bg-slate-100 rounded-full overflow-hidden">
-<div class="h-full bg-slate-400 w-[70%]"></div>
-</div>
-<!-- Vector Line -->
-<div class="hidden lg:block absolute -right-12 bottom-0 w-24 h-24 border-b-2 border-r-2 border-slate-300 rounded-br-3xl -z-10"></div>
-</div>
-<!-- Source 2 Connection -->
-<div class="absolute top-1/2 -translate-y-1/2 right-10 w-64 glass-card p-6 rounded-xl border border-white/50 shadow-sm transition-transform hover:-translate-y-2 group">
-<div class="flex items-center gap-3 mb-4">
-<div class="w-10 h-10 rounded bg-secondary-container/20 flex items-center justify-center">
-<span class="material-symbols-outlined text-secondary" data-icon="satellite_alt" data-weight="fill" style="font-variation-settings: 'FILL' 1;">satellite_alt</span>
-</div>
-<h3 class="font-headline font-bold text-secondary">Source 02</h3>
-</div>
-<h4 class="font-headline text-lg font-bold mb-2">Soil Moisture</h4>
-<p class="text-sm text-on-surface-variant mb-4">Active telemetry captured via Sentinel-1 SAR orbital imagery.</p>
-<div class="h-1 w-full bg-secondary-container/30 rounded-full overflow-hidden">
-<div class="h-full bg-secondary w-[85%]"></div>
-</div>
-</div>
-<!-- Source 3 Connection -->
-<div class="absolute bottom-10 left-20 w-64 glass-card p-6 rounded-xl border border-white/50 shadow-sm transition-transform hover:-translate-y-2 group">
-<div class="flex items-center gap-3 mb-4">
-<div class="w-10 h-10 rounded bg-primary-container/20 flex items-center justify-center">
-<span class="material-symbols-outlined text-primary" data-icon="rainy">rainy</span>
-</div>
-<h3 class="font-headline font-bold text-primary">Source 03</h3>
-</div>
-<h4 class="font-headline text-lg font-bold mb-2">Real-time Precipitation</h4>
-<p class="text-sm text-on-surface-variant mb-4">Continuous atmospheric monitoring from the Open-Meteo network.</p>
-<div class="h-1 w-full bg-primary-container/30 rounded-full overflow-hidden">
-<div class="h-full bg-primary-container w-[60%]"></div>
-</div>
-</div>
-</div>
-<!-- Process Details -->
-<div class="lg:col-span-5 space-y-12">
-<div class="bg-surface-container-lowest p-8 rounded-xl relative overflow-hidden group">
-<div class="absolute top-0 right-0 w-32 h-32 bg-primary-container/5 rounded-full -mr-16 -mt-16 group-hover:scale-110 transition-transform duration-500"></div>
-<h2 class="font-headline text-2xl font-bold mb-4 text-on-surface">The Triangulation Engine</h2>
-<p class="text-on-surface-variant mb-6 leading-relaxed">
-                            Our proprietary algorithm fuses static geological records with dynamic environmental variables to generate a hyper-local risk profile for trail segments.
-                        </p>
-<div class="space-y-4">
-<div class="flex items-center gap-4 p-4 bg-surface-container rounded-lg">
-<div class="w-2 h-2 rounded-full bg-slate-400"></div>
-<span class="text-sm font-medium">Historical Landslide Risk (IFFI)</span>
-</div>
-<div class="flex items-center gap-4 p-4 bg-surface-container rounded-lg">
-<div class="w-2 h-2 rounded-full bg-secondary"></div>
-<span class="text-sm font-medium">Soil Moisture (Sentinel-1 SAR)</span>
-</div>
-<div class="flex items-center gap-4 p-4 bg-surface-container rounded-lg">
-<div class="w-2 h-2 rounded-full bg-primary-container"></div>
-<span class="text-sm font-medium">Real-time Precipitation (Open-Meteo)</span>
-</div>
-</div>
-</div>
-<div class="flex items-start gap-6">
-<div class="w-12 h-12 rounded-full bg-on-surface text-surface flex items-center justify-center flex-shrink-0">
-<span class="material-symbols-outlined" data-icon="shield">shield</span>
-</div>
-<div>
-<h3 class="font-headline text-xl font-bold mb-2">Active Risk Mitigation</h3>
-<p class="text-on-surface-variant">Data is refreshed at orbital intervals to ensure that the geo-hydrological index reflects the current state of the terrain.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Technical Deep Dive Cards -->
-<section class="max-w-screen-2xl mx-auto px-6 mt-24">
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<!-- Data Card 1 -->
-<div class="group h-full bg-surface-container-low rounded-xl p-1 overflow-hidden transition-all hover:bg-slate-200">
-<div class="bg-surface-container-lowest h-full rounded-[calc(0.75rem-1px)] p-8">
-<div class="mb-6 overflow-hidden rounded-lg aspect-video bg-slate-100">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Digital terrain model showing steep mountain topography with red highlighted zones for landslide susceptibility" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAskgvA0H3-SjgTTzqUdzQXxI_X5MBtizD-1qzVS7s3Q_TfXKlD97pf2MVEPa0PXw0DOBBl1Td3HDoTwsVgi0W3EB9Xr5bNzgncDTkPLSN7W1PiQbmQSjd0DI28CnYiKpxJ_mham2Jo4dmBXz7gcr76eSR56OS6JbwctAvc_kxaWWq_he_pYHUOwLl2qMxlwcLLd4IrpQ_XgkrovQGSAG4QfL4LBioKOcFfduKC7vzeFb8RgVlw9OYpVCokdMk54MBGdUG4BAD4zpc"/>
-</div>
-<h3 class="font-headline text-xl font-black tracking-tighter mb-3 uppercase">IFFI Integration</h3>
-<p class="text-sm text-on-surface-variant font-light mb-6">Historical landslide inventory provides the foundational baseline for vulnerability assessment across Italian trail networks.</p>
-<div class="flex items-center justify-between text-xs font-bold font-headline uppercase tracking-widest text-slate-400">
-<span>Status: Active</span>
-<span>DB: v4.2</span>
-</div>
-</div>
-</div>
-<!-- Data Card 2 -->
-<div class="group h-full bg-surface-container-low rounded-xl p-1 overflow-hidden transition-all hover:bg-secondary-container/20">
-<div class="bg-surface-container-lowest h-full rounded-[calc(0.75rem-1px)] p-8 border-b-4 border-secondary">
-<div class="mb-6 overflow-hidden rounded-lg aspect-video bg-slate-100">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Synthetic Aperture Radar satellite visualization of soil moisture levels using a false-color green to blue gradient" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpBdfkT6Xr_MxYF1vgaJRL2Vkwg8TZps1CCHZSa4uGgvRoJONTQJ5-rmQoT4hZmYD2Z2RTB3TW955dNVOrLXHYtgIWq5jKjZbxhB-rRvhpdBFBMY48yejDcKx2juS7gLow237zKzSc671VsrR4gokqeLaJdhhg5-I7rTWxytaKSeCWTesgcUefobSjiylPYDy9RM2B8bHdoSvuEXrmY1h1rJ_-AzIKCDCumPubuafPs5xwYZrEWezOuHwnrqBJbe1ZiNlfni9yT9Y"/>
-</div>
-<h3 class="font-headline text-xl font-black tracking-tighter mb-3 uppercase text-secondary">Sentinel-1 SAR</h3>
-<p class="text-sm text-on-surface-variant font-light mb-6">Synthetic Aperture Radar sensors measure the dielectric constant of the topsoil to estimate water content regardless of cloud cover.</p>
-<div class="flex items-center justify-between text-xs font-bold font-headline uppercase tracking-widest text-secondary">
-<span>Orbit: Polar</span>
-<span>FREQ: C-BAND</span>
-</div>
-</div>
-</div>
-<!-- Data Card 3 -->
-<div class="group h-full bg-surface-container-low rounded-xl p-1 overflow-hidden transition-all hover:bg-primary-container/20">
-<div class="bg-surface-container-lowest h-full rounded-[calc(0.75rem-1px)] p-8 border-b-4 border-primary-container">
-<div class="mb-6 overflow-hidden rounded-lg aspect-video bg-slate-100">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Digital meteorological map showing rain bands moving across a mountain range with dynamic vector wind particles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCnNt5tyvf8qmTLxN5O1fRaf-bHxr_vpS0kzin-8x6iD7ULLzlJndzYeCKK8lULMSl8Nox9xOfr2DSHaMfGrhvrqGa_yUO2VCCDT3QpfyZYcvyCWLV-S3H9Rgk2dwAs2cBwFBKCFppEskO62DfP0tNRxJMr29dOL7QyMi23Q_21Jh7CivyaoeEa29Q8wq2MiHeKCR2hC9p2eEKj3S8Mk90LMQ_eAx_4luk2q9OV5qnjsXerAcpjTq7kHqhEAjtNORnKG7ghIH_EeQ"/>
-</div>
-<h3 class="font-headline text-xl font-black tracking-tighter mb-3 uppercase text-primary">Open-Meteo</h3>
-<p class="text-sm text-on-surface-variant font-light mb-6">Real-time precipitation metrics are ingested every 15 minutes to account for flash flood potential and rapid saturation.</p>
-<div class="flex items-center justify-between text-xs font-bold font-headline uppercase tracking-widest text-primary">
-<span>Refresh: 15m</span>
-<span>PRECIP: MM/H</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="w-full mt-auto bg-slate-100 dark:bg-slate-900">
-<div class="bg-slate-200 dark:bg-slate-800 h-[1px] w-full"></div>
-<div class="flex flex-col md:flex-row justify-between items-center px-8 py-12 w-full mx-auto max-w-screen-2xl">
-<div class="mb-8 md:mb-0">
-<div class="font-['Space_Grotesk'] font-black text-slate-800 dark:text-slate-200 text-xl mb-2">
-                    GeoSentinel
-                </div>
-<p class="font-['Inter'] text-sm antialiased text-slate-500 max-w-md">
-                    © 2024 GeoSentinel Orbital Security. Atmospheric Data Encryption Active.
-                </p>
-</div>
-<div class="flex flex-wrap justify-center gap-8 font-['Inter'] text-sm antialiased">
-<a class="text-slate-500 dark:text-slate-500 hover:text-cyan-600 transition-colors" href="#">Privacy Policy</a>
-<a class="text-slate-500 dark:text-slate-500 hover:text-cyan-600 transition-colors" href="#">Telemetry Terms</a>
-<a class="text-slate-500 dark:text-slate-500 hover:text-cyan-600 transition-colors" href="#">Satellite Network</a>
-<a class="text-slate-500 dark:text-slate-500 hover:text-cyan-600 transition-colors underline" href="#">API Docs</a>
-</div>
-</div>
-</footer>
-</body></html>
+  <!-- Top Navigation Bar -->
+  <nav
+    class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm dark:shadow-none border-b border-slate-200/50 dark:border-slate-800/50">
+    <div class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto h-20">
+      <a href="index.html"
+        class="text-2xl font-black text-sky-900 dark:text-sky-100 font-headline tracking-tight">GeoSentinel</a>
+      <div class="hidden md:flex space-x-8 items-center">
+        <a class="text-slate-600 dark:text-slate-400 font-headline font-bold tracking-tight hover:text-sky-500 dark:hover:text-sky-300 transition-colors"
+          href="index.html">Explore Trails</a>
+        <a class="text-sky-600 dark:text-sky-400 border-b-2 border-sky-600 font-headline font-bold tracking-tight py-1 transition-all"
+          href="howitworks.html">How It Works</a>
+        <a class="text-slate-600 dark:text-slate-400 font-headline font-bold tracking-tight hover:text-sky-500 dark:hover:text-sky-300 transition-colors"
+          href="aboutus.html">About Us</a>
+      </div>
+      <div class="flex items-center gap-4">
+        <button
+          class="bg-gradient-to-br from-primary to-primary-container text-white px-6 py-2.5 rounded-lg font-headline font-bold transition-all active:opacity-80 active:scale-95 shadow-md">Try
+          the MVP (lago di Fiastra area)</button>
+      </div>
+    </div>
+  </nav>
+  <main class="flex-grow pt-24 pb-20">
+    <!-- Hero Section -->
+    <section class="max-w-screen-2xl mx-auto px-6 mb-20">
+      <div class="relative rounded-xl overflow-hidden min-h-[400px] flex items-center p-12 bg-surface-container-low">
+        <img class="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-overlay"
+          data-alt="Abstract satellite view of Earth at night with glowing blue data connectivity lines and digital terrain mesh"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuCge_9g12UysdF-4Cxeb3JsVo9JXEDnuOx7lhsD7LJG_-vG3cC1iCgyGdb6CWTaxAwkO4wvLkjNbuE0UpSDa7_MWCVvrY11P6KPVlU4Zbbj-iJg60jlF-3YjRFujoT-xaYxNIjSh9d_K5EMUAPPqtM8xIGGgHgJz5MRNId-OYw87cbGl24csY_uqXW2_NeHB_gSRzYr726EX3Mq3rijQmOi63tFR39DSxN5l7_nKSKKRhw_T3L4eMTR2mZq_ZkZeQ037eY8KRQ6t1o" />
+        <div class="relative z-10 max-w-2xl">
+          <span
+            class="inline-block px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label text-xs font-bold mb-6 tracking-widest uppercase">
+            Protocol Architecture
+          </span>
+          <h1 class="font-headline text-5xl md:text-7xl font-bold tracking-tighter mb-6 text-on-surface">
+            Precision Risk <span class="text-primary-container">Telemetry</span>
+          </h1>
+          <p class="text-on-surface-variant text-xl leading-relaxed font-light">
+            GeoSentinel calculates a geo-hydrological risk index for hiking trails by combining three primary data
+            sources into a unified tactical assessment.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- Technical Convergence Section -->
+    <section class="max-w-screen-2xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <!-- Data Convergence Visualization -->
+        <div class="lg:col-span-7 relative h-[600px] flex items-center justify-center">
+          <!-- Central Hub -->
+          <div
+            class="relative z-20 w-48 h-48 rounded-full bg-white shadow-2xl flex flex-col items-center justify-center border-4 border-primary-container/30">
+            <div
+              class="absolute inset-0 rounded-full border border-dashed border-primary-container/50 animate-[spin_10s_linear_infinite]">
+            </div>
+            <span class="material-symbols-outlined text-primary text-5xl mb-2" data-icon="hub">hub</span>
+            <div class="font-headline text-center leading-tight">
+              <span class="block text-xs uppercase tracking-widest text-outline">Index Output</span>
+              <span class="block font-bold text-xl text-primary">RISK RATIO</span>
+            </div>
+          </div>
+          <!-- Source 1 Connection -->
+          <div
+            class="absolute top-10 left-10 w-64 glass-card p-6 rounded-xl border border-white/50 shadow-sm transition-transform hover:-translate-y-2 group">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded bg-slate-100 flex items-center justify-center">
+                <span class="material-symbols-outlined text-slate-700" data-icon="history">history</span>
+              </div>
+              <h3 class="font-headline font-bold text-slate-800">Source 01</h3>
+            </div>
+            <h4 class="font-headline text-lg font-bold mb-2">Historical Landslide Risk</h4>
+            <p class="text-sm text-on-surface-variant mb-4">Derived from comprehensive IFFI data repositories for
+              geospatial precedence.</p>
+            <div class="h-1 w-full bg-slate-100 rounded-full overflow-hidden">
+              <div class="h-full bg-slate-400 w-[70%]"></div>
+            </div>
+            <!-- Vector Line -->
+            <div
+              class="hidden lg:block absolute -right-12 bottom-0 w-24 h-24 border-b-2 border-r-2 border-slate-300 rounded-br-3xl -z-10">
+            </div>
+          </div>
+          <!-- Source 2 Connection -->
+          <div
+            class="absolute top-1/2 -translate-y-1/2 right-10 w-64 glass-card p-6 rounded-xl border border-white/50 shadow-sm transition-transform hover:-translate-y-2 group">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded bg-secondary-container/20 flex items-center justify-center">
+                <span class="material-symbols-outlined text-secondary" data-icon="satellite_alt" data-weight="fill"
+                  style="font-variation-settings: 'FILL' 1;">satellite_alt</span>
+              </div>
+              <h3 class="font-headline font-bold text-secondary">Source 02</h3>
+            </div>
+            <h4 class="font-headline text-lg font-bold mb-2">Soil Moisture</h4>
+            <p class="text-sm text-on-surface-variant mb-4">Active telemetry captured via Sentinel-1 SAR orbital
+              imagery.</p>
+            <div class="h-1 w-full bg-secondary-container/30 rounded-full overflow-hidden">
+              <div class="h-full bg-secondary w-[85%]"></div>
+            </div>
+          </div>
+          <!-- Source 3 Connection -->
+          <div
+            class="absolute bottom-10 left-20 w-64 glass-card p-6 rounded-xl border border-white/50 shadow-sm transition-transform hover:-translate-y-2 group">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded bg-primary-container/20 flex items-center justify-center">
+                <span class="material-symbols-outlined text-primary" data-icon="rainy">rainy</span>
+              </div>
+              <h3 class="font-headline font-bold text-primary">Source 03</h3>
+            </div>
+            <h4 class="font-headline text-lg font-bold mb-2">Real-time Precipitation</h4>
+            <p class="text-sm text-on-surface-variant mb-4">Continuous atmospheric monitoring from the Open-Meteo
+              network.</p>
+            <div class="h-1 w-full bg-primary-container/30 rounded-full overflow-hidden">
+              <div class="h-full bg-primary-container w-[60%]"></div>
+            </div>
+          </div>
+        </div>
+        <!-- Process Details -->
+        <div class="lg:col-span-5 space-y-12">
+          <div class="bg-surface-container-lowest p-8 rounded-xl relative overflow-hidden group">
+            <div
+              class="absolute top-0 right-0 w-32 h-32 bg-primary-container/5 rounded-full -mr-16 -mt-16 group-hover:scale-110 transition-transform duration-500">
+            </div>
+            <h2 class="font-headline text-2xl font-bold mb-4 text-on-surface">The Triangulation Engine</h2>
+            <p class="text-on-surface-variant mb-6 leading-relaxed">
+              Our proprietary algorithm fuses static geological records with dynamic environmental variables to generate
+              a hyper-local risk profile for trail segments.
+            </p>
+            <div class="space-y-4">
+              <div class="flex items-center gap-4 p-4 bg-surface-container rounded-lg">
+                <div class="w-2 h-2 rounded-full bg-slate-400"></div>
+                <span class="text-sm font-medium">Historical Landslide Risk (IFFI)</span>
+              </div>
+              <div class="flex items-center gap-4 p-4 bg-surface-container rounded-lg">
+                <div class="w-2 h-2 rounded-full bg-secondary"></div>
+                <span class="text-sm font-medium">Soil Moisture (Sentinel-1 SAR)</span>
+              </div>
+              <div class="flex items-center gap-4 p-4 bg-surface-container rounded-lg">
+                <div class="w-2 h-2 rounded-full bg-primary-container"></div>
+                <span class="text-sm font-medium">Real-time Precipitation (Open-Meteo)</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-start gap-6">
+            <div
+              class="w-12 h-12 rounded-full bg-on-surface text-surface flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined" data-icon="shield">shield</span>
+            </div>
+            <div>
+              <h3 class="font-headline text-xl font-bold mb-2">Active Risk Mitigation</h3>
+              <p class="text-on-surface-variant">Data is refreshed at orbital intervals to ensure that the
+                geo-hydrological index reflects the current state of the terrain.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Technical Deep Dive Cards -->
+    <section class="max-w-screen-2xl mx-auto px-6 mt-24">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Data Card 1 -->
+        <div
+          class="group h-full bg-surface-container-low rounded-xl p-1 overflow-hidden transition-all hover:bg-slate-200">
+          <div class="bg-surface-container-lowest h-full rounded-[calc(0.75rem-1px)] p-8">
+            <div class="mb-6 overflow-hidden rounded-lg aspect-video bg-slate-100">
+              <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                data-alt="Digital terrain model showing steep mountain topography with red highlighted zones for landslide susceptibility"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAskgvA0H3-SjgTTzqUdzQXxI_X5MBtizD-1qzVS7s3Q_TfXKlD97pf2MVEPa0PXw0DOBBl1Td3HDoTwsVgi0W3EB9Xr5bNzgncDTkPLSN7W1PiQbmQSjd0DI28CnYiKpxJ_mham2Jo4dmBXz7gcr76eSR56OS6JbwctAvc_kxaWWq_he_pYHUOwLl2qMxlwcLLd4IrpQ_XgkrovQGSAG4QfL4LBioKOcFfduKC7vzeFb8RgVlw9OYpVCokdMk54MBGdUG4BAD4zpc" />
+            </div>
+            <h3 class="font-headline text-xl font-black tracking-tighter mb-3 uppercase">IFFI Integration</h3>
+            <p class="text-sm text-on-surface-variant font-light mb-6">Historical landslide inventory provides the
+              foundational baseline for vulnerability assessment across Italian trail networks.</p>
+            <div
+              class="flex items-center justify-between text-xs font-bold font-headline uppercase tracking-widest text-slate-400">
+              <span>Status: Active</span>
+              <span>DB: v4.2</span>
+            </div>
+          </div>
+        </div>
+        <!-- Data Card 2 -->
+        <div
+          class="group h-full bg-surface-container-low rounded-xl p-1 overflow-hidden transition-all hover:bg-secondary-container/20">
+          <div class="bg-surface-container-lowest h-full rounded-[calc(0.75rem-1px)] p-8 border-b-4 border-secondary">
+            <div class="mb-6 overflow-hidden rounded-lg aspect-video bg-slate-100">
+              <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                data-alt="Synthetic Aperture Radar satellite visualization of soil moisture levels using a false-color green to blue gradient"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpBdfkT6Xr_MxYF1vgaJRL2Vkwg8TZps1CCHZSa4uGgvRoJONTQJ5-rmQoT4hZmYD2Z2RTB3TW955dNVOrLXHYtgIWq5jKjZbxhB-rRvhpdBFBMY48yejDcKx2juS7gLow237zKzSc671VsrR4gokqeLaJdhhg5-I7rTWxytaKSeCWTesgcUefobSjiylPYDy9RM2B8bHdoSvuEXrmY1h1rJ_-AzIKCDCumPubuafPs5xwYZrEWezOuHwnrqBJbe1ZiNlfni9yT9Y" />
+            </div>
+            <h3 class="font-headline text-xl font-black tracking-tighter mb-3 uppercase text-secondary">Sentinel-1 SAR
+            </h3>
+            <p class="text-sm text-on-surface-variant font-light mb-6">Synthetic Aperture Radar sensors measure the
+              dielectric constant of the topsoil to estimate water content regardless of cloud cover.</p>
+            <div
+              class="flex items-center justify-between text-xs font-bold font-headline uppercase tracking-widest text-secondary">
+              <span>Orbit: Polar</span>
+              <span>FREQ: C-BAND</span>
+            </div>
+          </div>
+        </div>
+        <!-- Data Card 3 -->
+        <div
+          class="group h-full bg-surface-container-low rounded-xl p-1 overflow-hidden transition-all hover:bg-primary-container/20">
+          <div
+            class="bg-surface-container-lowest h-full rounded-[calc(0.75rem-1px)] p-8 border-b-4 border-primary-container">
+            <div class="mb-6 overflow-hidden rounded-lg aspect-video bg-slate-100">
+              <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                data-alt="Digital meteorological map showing rain bands moving across a mountain range with dynamic vector wind particles"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCnNt5tyvf8qmTLxN5O1fRaf-bHxr_vpS0kzin-8x6iD7ULLzlJndzYeCKK8lULMSl8Nox9xOfr2DSHaMfGrhvrqGa_yUO2VCCDT3QpfyZYcvyCWLV-S3H9Rgk2dwAs2cBwFBKCFppEskO62DfP0tNRxJMr29dOL7QyMi23Q_21Jh7CivyaoeEa29Q8wq2MiHeKCR2hC9p2eEKj3S8Mk90LMQ_eAx_4luk2q9OV5qnjsXerAcpjTq7kHqhEAjtNORnKG7ghIH_EeQ" />
+            </div>
+            <h3 class="font-headline text-xl font-black tracking-tighter mb-3 uppercase text-primary">Open-Meteo</h3>
+            <p class="text-sm text-on-surface-variant font-light mb-6">Real-time precipitation metrics are ingested
+              every 15 minutes to account for flash flood potential and rapid saturation.</p>
+            <div
+              class="flex items-center justify-between text-xs font-bold font-headline uppercase tracking-widest text-primary">
+              <span>Refresh: 15m</span>
+              <span>PRECIP: MM/H</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer class="w-full mt-auto bg-slate-100 dark:bg-slate-900">
+    <div class="bg-slate-200 dark:bg-slate-800 h-[1px] w-full"></div>
+    <div class="flex flex-col md:flex-row justify-between items-center px-8 py-12 w-full mx-auto max-w-screen-2xl">
+      <div class="mb-8 md:mb-0">
+        <div class="font-['Space_Grotesk'] font-black text-slate-800 dark:text-slate-200 text-xl mb-2">
+          GeoSentinel
+        </div>
+        <p class="font-['Inter'] text-sm antialiased text-slate-500 max-w-md">
+          © 2024 GeoSentinel Orbital Security. Atmospheric Data Encryption Active.
+        </p>
+      </div>
+      <div class="flex flex-wrap justify-center gap-8 font-['Inter'] text-sm antialiased">
+        <a class="text-slate-500 dark:text-slate-500 hover:text-cyan-600 transition-colors" href="#">Privacy Policy</a>
+        <a class="text-slate-500 dark:text-slate-500 hover:text-cyan-600 transition-colors" href="#">Telemetry Terms</a>
+        <a class="text-slate-500 dark:text-slate-500 hover:text-cyan-600 transition-colors" href="#">Satellite
+          Network</a>
+        <a class="text-slate-500 dark:text-slate-500 hover:text-cyan-600 transition-colors underline" href="#">API
+          Docs</a>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
