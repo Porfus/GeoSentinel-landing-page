@@ -95,30 +95,14 @@
       background: linear-gradient(135deg, #00658d 0%, #00aeef 100%);
     }
   </style>
+  <link rel="icon" type="image/png" href="logo.png" />
+  <script src="navbar.js"></script>
+  <script src="footer.js"></script>
 </head>
 
 <body class="bg-background font-body text-on-background min-h-screen flex flex-col">
   <!-- Top Navigation Bar -->
-  <nav
-    class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm dark:shadow-none border-b border-slate-200/50 dark:border-slate-800/50">
-    <div class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto h-20">
-      <a href="index.html"
-        class="text-2xl font-black text-sky-900 dark:text-sky-100 font-headline tracking-tight">GeoSentinel</a>
-      <div class="hidden md:flex space-x-8 items-center">
-        <a class="text-slate-600 dark:text-slate-400 font-headline font-bold tracking-tight hover:text-sky-500 dark:hover:text-sky-300 transition-colors"
-          href="index.html">Explore Trails</a>
-        <a class="text-sky-600 dark:text-sky-400 border-b-2 border-sky-600 font-headline font-bold tracking-tight py-1 transition-all"
-          href="howitworks.html">How It Works</a>
-        <a class="text-slate-600 dark:text-slate-400 font-headline font-bold tracking-tight hover:text-sky-500 dark:hover:text-sky-300 transition-colors"
-          href="aboutus.html">About Us</a>
-      </div>
-      <div class="flex items-center gap-4">
-        <button
-          class="bg-gradient-to-br from-primary to-primary-container text-white px-6 py-2.5 rounded-lg font-headline font-bold transition-all active:opacity-80 active:scale-95 shadow-md">Try
-          the MVP (lago di Fiastra area)</button>
-      </div>
-    </div>
-  </nav>
+  <app-navbar active="howitworks"></app-navbar>
   <main class="flex-grow pt-24 pb-20">
     <!-- Hero Section -->
     <section class="max-w-screen-2xl mx-auto px-6 mb-20">
@@ -138,117 +122,6 @@
             GeoSentinel calculates a geo-hydrological risk index for hiking trails by combining three primary data
             sources into a unified tactical assessment.
           </p>
-        </div>
-      </div>
-    </section>
-    <!-- Technical Convergence Section -->
-    <section class="max-w-screen-2xl mx-auto px-6">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-        <!-- Data Convergence Visualization -->
-        <div class="lg:col-span-7 relative h-[600px] flex items-center justify-center">
-          <!-- Central Hub -->
-          <div
-            class="relative z-20 w-48 h-48 rounded-full bg-white shadow-2xl flex flex-col items-center justify-center border-4 border-primary-container/30">
-            <div
-              class="absolute inset-0 rounded-full border border-dashed border-primary-container/50 animate-[spin_10s_linear_infinite]">
-            </div>
-            <span class="material-symbols-outlined text-primary text-5xl mb-2" data-icon="hub">hub</span>
-            <div class="font-headline text-center leading-tight">
-              <span class="block text-xs uppercase tracking-widest text-outline">Index Output</span>
-              <span class="block font-bold text-xl text-primary">RISK RATIO</span>
-            </div>
-          </div>
-          <!-- Source 1 Connection -->
-          <div
-            class="absolute top-10 left-10 w-64 glass-card p-6 rounded-xl border border-white/50 shadow-sm transition-transform hover:-translate-y-2 group">
-            <div class="flex items-center gap-3 mb-4">
-              <div class="w-10 h-10 rounded bg-slate-100 flex items-center justify-center">
-                <span class="material-symbols-outlined text-slate-700" data-icon="history">history</span>
-              </div>
-              <h3 class="font-headline font-bold text-slate-800">Source 01</h3>
-            </div>
-            <h4 class="font-headline text-lg font-bold mb-2">Historical Landslide Risk</h4>
-            <p class="text-sm text-on-surface-variant mb-4">Derived from comprehensive IFFI data repositories for
-              geospatial precedence.</p>
-            <div class="h-1 w-full bg-slate-100 rounded-full overflow-hidden">
-              <div class="h-full bg-slate-400 w-[70%]"></div>
-            </div>
-            <!-- Vector Line -->
-            <div
-              class="hidden lg:block absolute -right-12 bottom-0 w-24 h-24 border-b-2 border-r-2 border-slate-300 rounded-br-3xl -z-10">
-            </div>
-          </div>
-          <!-- Source 2 Connection -->
-          <div
-            class="absolute top-1/2 -translate-y-1/2 right-10 w-64 glass-card p-6 rounded-xl border border-white/50 shadow-sm transition-transform hover:-translate-y-2 group">
-            <div class="flex items-center gap-3 mb-4">
-              <div class="w-10 h-10 rounded bg-secondary-container/20 flex items-center justify-center">
-                <span class="material-symbols-outlined text-secondary" data-icon="satellite_alt" data-weight="fill"
-                  style="font-variation-settings: 'FILL' 1;">satellite_alt</span>
-              </div>
-              <h3 class="font-headline font-bold text-secondary">Source 02</h3>
-            </div>
-            <h4 class="font-headline text-lg font-bold mb-2">Soil Moisture</h4>
-            <p class="text-sm text-on-surface-variant mb-4">Active telemetry captured via Sentinel-1 SAR orbital
-              imagery.</p>
-            <div class="h-1 w-full bg-secondary-container/30 rounded-full overflow-hidden">
-              <div class="h-full bg-secondary w-[85%]"></div>
-            </div>
-          </div>
-          <!-- Source 3 Connection -->
-          <div
-            class="absolute bottom-10 left-20 w-64 glass-card p-6 rounded-xl border border-white/50 shadow-sm transition-transform hover:-translate-y-2 group">
-            <div class="flex items-center gap-3 mb-4">
-              <div class="w-10 h-10 rounded bg-primary-container/20 flex items-center justify-center">
-                <span class="material-symbols-outlined text-primary" data-icon="rainy">rainy</span>
-              </div>
-              <h3 class="font-headline font-bold text-primary">Source 03</h3>
-            </div>
-            <h4 class="font-headline text-lg font-bold mb-2">Real-time Precipitation</h4>
-            <p class="text-sm text-on-surface-variant mb-4">Continuous atmospheric monitoring from the Open-Meteo
-              network.</p>
-            <div class="h-1 w-full bg-primary-container/30 rounded-full overflow-hidden">
-              <div class="h-full bg-primary-container w-[60%]"></div>
-            </div>
-          </div>
-        </div>
-        <!-- Process Details -->
-        <div class="lg:col-span-5 space-y-12">
-          <div class="bg-surface-container-lowest p-8 rounded-xl relative overflow-hidden group">
-            <div
-              class="absolute top-0 right-0 w-32 h-32 bg-primary-container/5 rounded-full -mr-16 -mt-16 group-hover:scale-110 transition-transform duration-500">
-            </div>
-            <h2 class="font-headline text-2xl font-bold mb-4 text-on-surface">The Triangulation Engine</h2>
-            <p class="text-on-surface-variant mb-6 leading-relaxed">
-              Our proprietary algorithm fuses static geological records with dynamic environmental variables to generate
-              a hyper-local risk profile for trail segments.
-            </p>
-            <div class="space-y-4">
-              <div class="flex items-center gap-4 p-4 bg-surface-container rounded-lg">
-                <div class="w-2 h-2 rounded-full bg-slate-400"></div>
-                <span class="text-sm font-medium">Historical Landslide Risk (IFFI)</span>
-              </div>
-              <div class="flex items-center gap-4 p-4 bg-surface-container rounded-lg">
-                <div class="w-2 h-2 rounded-full bg-secondary"></div>
-                <span class="text-sm font-medium">Soil Moisture (Sentinel-1 SAR)</span>
-              </div>
-              <div class="flex items-center gap-4 p-4 bg-surface-container rounded-lg">
-                <div class="w-2 h-2 rounded-full bg-primary-container"></div>
-                <span class="text-sm font-medium">Real-time Precipitation (Open-Meteo)</span>
-              </div>
-            </div>
-          </div>
-          <div class="flex items-start gap-6">
-            <div
-              class="w-12 h-12 rounded-full bg-on-surface text-surface flex items-center justify-center flex-shrink-0">
-              <span class="material-symbols-outlined" data-icon="shield">shield</span>
-            </div>
-            <div>
-              <h3 class="font-headline text-xl font-bold mb-2">Active Risk Mitigation</h3>
-              <p class="text-on-surface-variant">Data is refreshed at orbital intervals to ensure that the
-                geo-hydrological index reflects the current state of the terrain.</p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -318,27 +191,7 @@
     </section>
   </main>
   <!-- Footer -->
-  <footer class="w-full mt-auto bg-slate-100 dark:bg-slate-900">
-    <div class="bg-slate-200 dark:bg-slate-800 h-[1px] w-full"></div>
-    <div class="flex flex-col md:flex-row justify-between items-center px-8 py-12 w-full mx-auto max-w-screen-2xl">
-      <div class="mb-8 md:mb-0">
-        <div class="font-['Space_Grotesk'] font-black text-slate-800 dark:text-slate-200 text-xl mb-2">
-          GeoSentinel
-        </div>
-        <p class="font-['Inter'] text-sm antialiased text-slate-500 max-w-md">
-          © 2024 GeoSentinel Orbital Security. Atmospheric Data Encryption Active.
-        </p>
-      </div>
-      <div class="flex flex-wrap justify-center gap-8 font-['Inter'] text-sm antialiased">
-        <a class="text-slate-500 dark:text-slate-500 hover:text-cyan-600 transition-colors" href="#">Privacy Policy</a>
-        <a class="text-slate-500 dark:text-slate-500 hover:text-cyan-600 transition-colors" href="#">Telemetry Terms</a>
-        <a class="text-slate-500 dark:text-slate-500 hover:text-cyan-600 transition-colors" href="#">Satellite
-          Network</a>
-        <a class="text-slate-500 dark:text-slate-500 hover:text-cyan-600 transition-colors underline" href="#">API
-          Docs</a>
-      </div>
-    </div>
-  </footer>
+  <app-footer></app-footer>
 </body>
 
 </html>
