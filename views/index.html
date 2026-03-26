@@ -216,15 +216,14 @@
       const videoUrl = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1`;
 
       const openModal = () => {
-        // Rimuovi hidden per renderlo block/flex
-        videoModal.classList.remove('hidden');
+        // Mostra il contenitore (sovrascrive il display: none del CSS)
+        videoModal.style.display = 'flex';
 
-        // Timeout molto breve per permettere al browser di registrare la rimozione del display: none
-        // in modo che la transition funzioni
+        // Anima l'opacità e la scala usando stili inline
         setTimeout(() => {
-          videoModal.classList.remove('opacity-0');
-          videoModalContent.classList.remove('scale-95');
-          videoModalContent.classList.add('scale-100');
+          videoModal.style.opacity = '1';
+          videoModalContent.style.setProperty('--tw-scale-x', '1');
+          videoModalContent.style.setProperty('--tw-scale-y', '1');
         }, 10);
 
         // Imposta l'url per farlo partire
@@ -232,16 +231,16 @@
       };
 
       const closeModal = () => {
-        // Applica le classi per l'animazione di uscita
-        videoModal.classList.add('opacity-0');
-        videoModalContent.classList.remove('scale-100');
-        videoModalContent.classList.add('scale-95');
+        // Avvia l'animazione di uscita
+        videoModal.style.opacity = '0';
+        videoModalContent.style.setProperty('--tw-scale-x', '0.95');
+        videoModalContent.style.setProperty('--tw-scale-y', '0.95');
 
         // Aspetta che finisca l'animazione per nasconderlo del tutto e fermare il video
         setTimeout(() => {
-          videoModal.classList.add('hidden');
+          videoModal.style.display = 'none';
           youtubeIframe.src = ''; // Rimuovi il src per far fermare il video
-        }, 300); // 300ms = duration-300 di Tailwind
+        }, 300);
       };
 
       if (videoBtn) {
@@ -258,7 +257,7 @@
 
       // Chiudi la modale anche con il tasto ESC
       document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && !videoModal.classList.contains('hidden')) {
+        if (e.key === 'Escape' && videoModal.style.display === 'flex') {
           closeModal();
         }
       });
