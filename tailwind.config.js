@@ -19,7 +19,7 @@ module.exports = {
         },
         /* ── On-surfaces (forest green brand) ── */
         "earth": {
-          "nav": "#2a5905",
+          "nav": "#142a03",
           "900": "#2c560b",
           "600": "#3d6e15",
           "400": "#5a912a",

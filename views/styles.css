@@ -3838,7 +3838,7 @@ input:where([type='file']):focus {
 
 .bg-earth-nav {
   --tw-bg-opacity: 1;
-  background-color: rgb(42 89 5 / var(--tw-bg-opacity, 1));
+  background-color: rgb(20 42 3 / var(--tw-bg-opacity, 1));
 }
 
 .bg-gray-100 {
