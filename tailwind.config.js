@@ -7,58 +7,58 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        /* ── Surfaces (warm parchment / stone) ── */
+        /* ── Surfaces (sage green) ── */
         "alpine": {
-          "bg":       "#faf8f5",
-          "card":     "#f5f1eb",
-          "muted":    "#f0ece6",
-          "border":   "#e5e0d8",
-          "dim":      "#dad5cd",
-          "warm":     "#ede7dd",
-          "white":    "#ffffff",
+          "bg": "#C7D3B5",
+          "card": "#ffffff",
+          "muted": "#b8c3a5",
+          "border": "#D2DDE1",
+          "dim": "#c0ced4",
+          "warm": "#d4dec5",
+          "white": "#ffffff",
         },
-        /* ── On-surfaces (deep earth) ── */
+        /* ── On-surfaces (forest shadow) ── */
         "earth": {
-          "900":      "#2c2418",
-          "600":      "#6b5e4f",
-          "400":      "#9a8d7d",
-          "200":      "#b8ad9e",
-          "100":      "#d5cabb",
+          "900": "#0C1F09",
+          "600": "#263f21",
+          "400": "#406039",
+          "200": "#7a9973",
+          "100": "#b3cca8",
         },
-        /* ── Primary (ochre) ── */
+        /* ── Primary (vibrant orange) ── */
         "ochre": {
-          "DEFAULT":  "#b07320",
-          "light":    "#f5e6cc",
-          "dim":      "#e0a54a",
-          "dark":     "#7a5010",
-          "deep":     "#3d2800",
+          "DEFAULT": "#ec5a21",
+          "light": "#ff773d",
+          "dim": "#f57242",
+          "dark": "#b84115",
+          "deep": "#7a2a09",
         },
-        /* ── Secondary (fir green) ── */
+        /* ── Secondary (mosswood) ── */
         "fir": {
-          "DEFAULT":  "#3d6b50",
-          "light":    "#dff0e5",
-          "dim":      "#82c89a",
-          "dark":     "#1e4d35",
-          "deep":     "#0a2818",
+          "DEFAULT": "#415027",
+          "light": "#bccc9b",
+          "dim": "#8fa372",
+          "dark": "#2a3617",
+          "deep": "#121a07",
         },
-        /* ── Tertiary (warm grey) ── */
+        /* ── Tertiary (meadowgold) ── */
         "stone": {
-          "DEFAULT":  "#6b6358",
-          "light":    "#d8cfc3",
-          "dim":      "#c4b8aa",
-          "dark":     "#524a40",
+          "DEFAULT": "#BDB955",
+          "light": "#e6e4bb",
+          "dim": "#d6d38e",
+          "dark": "#918e38",
         },
         /* ── Error ── */
         "danger": {
-          "DEFAULT":  "#ba1a1a",
-          "light":    "#ffdad6",
-          "dark":     "#410002",
+          "DEFAULT": "#ba1a1a",
+          "light": "#ffdad6",
+          "dark": "#410002",
         },
       },
       fontFamily: {
         headline: ["Space Grotesk", "sans-serif"],
-        body:     ["Inter", "sans-serif"],
-        label:    ["Inter", "sans-serif"]
+        body: ["Inter", "sans-serif"],
+        label: ["Inter", "sans-serif"]
       }
     }
   },
