@@ -7,23 +7,24 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        /* ── Surfaces (sage green) ── */
+        /* ── Surfaces (light spring green) ── */
         "alpine": {
-          "bg": "#C7D3B5",
+          "bg": "#deffc5",
           "card": "#ffffff",
-          "muted": "#b8c3a5",
+          "muted": "#cbdba7",
           "border": "#D2DDE1",
           "dim": "#c0ced4",
-          "warm": "#d4dec5",
+          "warm": "#eefad2",
           "white": "#ffffff",
         },
-        /* ── On-surfaces (forest shadow) ── */
+        /* ── On-surfaces (forest green brand) ── */
         "earth": {
-          "900": "#0C1F09",
-          "600": "#263f21",
-          "400": "#406039",
-          "200": "#7a9973",
-          "100": "#b3cca8",
+          "nav": "#2a5905",
+          "900": "#2c560b",
+          "600": "#3d6e15",
+          "400": "#5a912a",
+          "200": "#89b861",
+          "100": "#b8d99c",
         },
         /* ── Primary (vibrant orange) ── */
         "ochre": {

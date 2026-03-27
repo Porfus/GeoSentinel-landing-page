@@ -1,7 +1,7 @@
 class AppFooter extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
-      <footer class="bg-earth-900 w-full py-12 px-8 mt-auto border-t border-earth-100/10">
+      <footer class="bg-earth-nav w-full py-12 px-8 mt-auto border-t border-earth-100/10">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-7xl mx-auto">
           <div class="col-span-1 md:col-span-1">
             <div class="text-lg font-bold text-alpine-bg font-headline mb-4">GeoSentinel Cassini</div>

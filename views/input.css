@@ -29,7 +29,7 @@
      Hero Section (index)
      ═══════════════════════════════════════════ */
   .hero-section {
-    @apply relative min-h-[90vh] flex items-center pt-20 overflow-hidden;
+    @apply relative min-h-[90vh] flex items-center overflow-hidden;
   }
   .hero-image-container {
     @apply absolute inset-0 z-0;
@@ -41,7 +41,7 @@
     @apply absolute inset-0 bg-stone-900/50 mix-blend-multiply;
   }
   .hero-content-wrapper {
-    @apply relative z-10 container mx-auto px-8 grid
+    @apply relative z-10 container mx-auto px-8 pt-32 grid
            lg:grid-cols-2 gap-12 items-center;
   }
   .hero-content-left {
@@ -367,7 +367,7 @@
   }
   .hiw-hero-inner {
     @apply relative rounded-xl overflow-hidden min-h-[400px]
-           flex items-center p-12 bg-gradient-to-br from-fir-deep to-earth-900;
+           flex items-center p-12 bg-earth-900;
   }
   .hiw-hero-bg {
     @apply absolute inset-0 w-full h-full object-cover

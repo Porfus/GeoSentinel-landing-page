@@ -1,17 +1,18 @@
 class AppNavbar extends HTMLElement {
   connectedCallback() {
-    const activePage = this.getAttribute('active') || 'home';
+    const activePage = this.getAttribute('active-page') || this.getAttribute('active') || 'home';
+    const isTransparentPage = activePage === 'home';
 
     const getLinkClass = (pageName) => {
       const baseClass = "font-headline font-bold tracking-tight transition-colors block md:inline-block w-full text-left md:w-auto px-4 py-3 md:p-0 rounded-lg md:rounded-none ";
       if (activePage === pageName) {
         return baseClass + "text-ochre bg-ochre/10 md:bg-transparent md:border-b-2 md:border-ochre md:py-1";
       }
-      return baseClass + "text-alpine-dim hover:text-ochre hover:bg-earth-600/30 md:hover:bg-transparent";
+      return baseClass + "text-white/70 hover:text-ochre hover:bg-white/10 md:hover:bg-transparent";
     };
 
     this.innerHTML = `
-      <nav id="main-nav" class="fixed top-0 w-full z-50 transition-all duration-500 bg-transparent border-b border-transparent">
+      <nav id="main-nav" class="fixed top-0 w-full z-50 transition-all duration-500 ${isTransparentPage ? 'bg-transparent border-transparent' : 'bg-earth-nav shadow-lg border-white/10'}">
         <div class="flex justify-between items-center w-full px-4 md:px-8 max-w-screen-2xl mx-auto h-20 relative z-50">
           
           <!-- BRAND -->
@@ -23,7 +24,7 @@ class AppNavbar extends HTMLElement {
           </a>
 
           <!-- DESKTOP NAV -->
-          <div class="hidden md:flex space-x-8 items-center">
+          <div class="hidden md:flex space-x-10 items-center">
             <a class="${getLinkClass('home')}" href="index.html">Explore Trails</a>
             <a class="${getLinkClass('howitworks')}" href="howitworks.html">How It Works</a>
             <a class="${getLinkClass('aboutus')}" href="aboutus.html">About Us</a>
@@ -43,7 +44,7 @@ class AppNavbar extends HTMLElement {
         </div>
 
         <!-- MOBILE MENU OVERLAY -->
-        <div id="mobile-menu" class="absolute top-20 left-0 w-full bg-earth-900 z-40 hidden flex-col px-6 py-6 shadow-xl border-b border-white/10">
+        <div id="mobile-menu" class="absolute top-20 left-0 w-full bg-earth-nav z-40 hidden flex-col px-6 py-6 shadow-xl border-b border-white/10">
           <div class="flex flex-col space-y-2 items-start w-full">
             <a class="${getLinkClass('home')}" href="index.html">Explore Trails</a>
             <a class="${getLinkClass('howitworks')}" href="howitworks.html">How It Works</a>
@@ -62,21 +63,26 @@ class AppNavbar extends HTMLElement {
   }
 
   initScrollEffect() {
+    const activePage = this.getAttribute('active-page') || this.getAttribute('active') || 'home';
+    const isTransparentPage = activePage === 'home';
+    
+    // Only enable scroll effect on pages where it starts transparent
+    if (!isTransparentPage) return;
+
     const nav = this.querySelector('#main-nav');
     if (!nav) return;
 
     const handleScroll = () => {
-      if (window.scrollY > 50) {
+      if (window.scrollY > 20) {
         nav.classList.remove('bg-transparent', 'border-transparent');
-        nav.classList.add('bg-earth-900/95', 'backdrop-blur-md', 'shadow-lg', 'border-white/10');
+        nav.classList.add('bg-earth-nav', 'shadow-lg', 'border-white/10');
       } else {
         nav.classList.add('bg-transparent', 'border-transparent');
-        nav.classList.remove('bg-earth-900/95', 'backdrop-blur-md', 'shadow-lg', 'border-white/10');
+        nav.classList.remove('bg-earth-nav', 'shadow-lg', 'border-white/10');
       }
     };
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial check
   }
 
   initMobileMenu() {
