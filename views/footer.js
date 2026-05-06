@@ -36,7 +36,7 @@ class AppFooter extends HTMLElement {
           </div>
         </div>
         <div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-space-700 text-center">
-          <p class="text-text-muted text-[10px] uppercase tracking-widest">&copy; 2026 GeoSentinel Cassini. All rights reserved.</p>
+          <p class="text-text-muted text-[10px] uppercase tracking-widest">&copy; 2026 GeoSentinel. All rights reserved.</p>
         </div>
       </footer>
     `;
