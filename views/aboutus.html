@@ -1,88 +1,87 @@
 <!DOCTYPE html>
-
 <html class="scroll-smooth" lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>About Us | GeoSentinel</title>
-    <link href="styles.css" rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
-    <link rel="icon" type="image/png" href="logo.png" />
-    <script src="navbar.js"></script>
-    <script src="footer.js"></script>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>About Us | GeoSentinel</title>
+  <link href="styles.css" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <script src="navbar.js"></script>
+  <script src="footer.js"></script>
+  <script src="animations.js"></script>
 </head>
 
-<body class="page-body">
-    <!-- TopNavBar -->
-    <app-navbar active="aboutus"></app-navbar>
+<body class="bg-space-900 text-text-main min-h-screen flex flex-col">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <app-navbar active="aboutus"></app-navbar>
 
-    <main class="about-page">
-        <div class="about-container">
-            <div class="about-header">
-                <h1 class="about-title">Our Evolution</h1>
-                <p class="about-subtitle">A winding journey from concept to field validation.</p>
-            </div>
-            <div class="story-container story-items">
-                <!-- SVG Winding Path background -->
-                <svg class="winding-path hidden md:block" fill="none" viewbox="0 0 800 1600"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path class="text-primary/30"
-                        d="M400 50 C 600 150, 200 250, 450 350 C 700 450, 300 550, 350 700 C 400 850, 600 950, 450 1100 C 300 1250, 500 1350, 400 1500"
-                        stroke="currentColor" stroke-dasharray="8 8" stroke-width="2"></path>
-                </svg>
-                <!-- Stage 1 -->
-                <div class="story-stage md:items-start md:ml-20">
-                    <div class="story-card max-w-[380px] transform rotate-[-3deg]">
-                        <img alt="10th Cassini Hackathon" class="story-card-image" src="assets/1_cassini_10th.png" />
-                        <p class="story-card-caption">10th Cassini Hackathon (2025)</p>
-                    </div>
-                </div>
-                <!-- Stage 2 -->
-                <div class="story-stage md:items-end md:mr-20">
-                    <div class="story-card max-w-[360px] transform rotate-[2deg]">
-                        <img alt="Soil Humidity Analysis" class="story-card-image"
-                            src="assets/2_soil_humidity_tests.png" />
-                        <p class="story-card-caption">Soil Humidity Analysis</p>
-                    </div>
-                </div>
-                <!-- Stage 3 -->
-                <div class="story-stage md:items-start md:ml-40">
-                    <div class="story-card max-w-[340px] transform rotate-[-2deg]">
-                        <img alt="Landslide History Tests" class="story-card-image"
-                            src="assets/3_landslide_history_tests.png" />
-                        <p class="story-card-caption">Landslide History Tests</p>
-                    </div>
-                </div>
-                <!-- Stage 4 -->
-                <div class="story-stage md:items-center">
-                    <div class="story-card max-w-[380px] transform rotate-[3deg]">
-                        <img alt="Weather Service Integration" class="story-card-image"
-                            src="assets/4_live_weather_service_tests.png" />
-                        <p class="story-card-caption">Weather Service Integration</p>
-                    </div>
-                </div>
-                <!-- Stage 5 -->
-                <div class="story-stage md:items-end md:mr-32">
-                    <div class="story-card max-w-[400px] transform rotate-[-1deg]">
-                        <img alt="Field Validation: Lame Rosse" class="story-card-image"
-                            src="assets/5_tried_geosentinel_on_the_field_at_lame_rosse.png" />
-                        <div class="mt-4 text-center">
-                            <p class="story-card-caption">Field Validation: Lame Rosse</p>
-                            <span class="story-card-milestone">2026 Milestone</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <main id="main-content" class="flex-grow pt-32 pb-32" tabindex="-1">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-20 reveal">
+        <h1 class="font-headline text-5xl font-bold text-text-main mb-4 md:text-7xl">Our Evolution</h1>
+        <p class="text-xl text-text-muted">A winding journey from concept to field validation.</p>
+      </div>
+
+      <div class="relative space-y-24 md:space-y-32">
+        <!-- SVG Winding Path background -->
+        <svg class="absolute top-0 left-1/2 -translate-x-1/2 z-0 h-full w-full hidden md:block" fill="none" viewBox="0 0 800 1600">
+          <path class="text-accent/10" d="M400 50 C 600 150, 200 250, 450 350 C 700 450, 300 550, 350 700 C 400 850, 600 950, 450 1100 C 300 1250, 500 1350, 400 1500" stroke="currentColor" stroke-dasharray="8 8" stroke-width="2"></path>
+        </svg>
+
+        <!-- Stage 1 -->
+        <div class="relative z-10 flex flex-col items-center md:items-start md:ml-20 reveal">
+          <div class="terminal-card max-w-[380px] p-2">
+            <img alt="Cassini Hackathon" class="rounded aspect-[4/3] object-cover mb-4 opacity-90" src="assets/1_cassini_10th.png" />
+            <p class="text-center font-headline font-bold text-text-main">10th Cassini Hackathon (2025)</p>
+          </div>
         </div>
-    </main>
-    <!-- Footer -->
-    <app-footer></app-footer>
-</body>
 
+        <!-- Stage 2 -->
+        <div class="relative z-10 flex flex-col items-center md:items-end md:mr-20 reveal">
+          <div class="terminal-card max-w-[360px] p-2">
+            <img alt="Soil Humidity Analysis" class="rounded aspect-[4/3] object-cover mb-4 opacity-90" src="assets/2_soil_humidity_tests.png" />
+            <p class="text-center font-headline font-bold text-text-main">Soil Humidity Analysis</p>
+          </div>
+        </div>
+
+        <!-- Stage 3 -->
+        <div class="relative z-10 flex flex-col items-center md:items-start md:ml-40 reveal">
+          <div class="terminal-card max-w-[340px] p-2">
+            <img alt="Landslide History" class="rounded aspect-[4/3] object-cover mb-4 opacity-90" src="assets/3_landslide_history_tests.png" />
+            <p class="text-center font-headline font-bold text-text-main">Landslide History Tests</p>
+          </div>
+        </div>
+
+        <!-- Stage 4 -->
+        <div class="relative z-10 flex flex-col items-center reveal">
+          <div class="terminal-card max-w-[380px] p-2">
+            <img alt="Weather Integration" class="rounded aspect-[4/3] object-cover mb-4 opacity-90" src="assets/4_live_weather_service_tests.png" />
+            <p class="text-center font-headline font-bold text-text-main">Weather Service Integration</p>
+          </div>
+        </div>
+
+        <!-- Stage 5 -->
+        <div class="relative z-10 flex flex-col items-center md:items-end md:mr-32 reveal">
+          <div class="terminal-card max-w-[400px] p-2">
+            <img alt="Field Validation" class="rounded aspect-[4/3] object-cover mb-4 opacity-90" src="assets/5_tried_geosentinel_on_the_field_at_lame_rosse.png" />
+            <div class="text-center">
+              <p class="font-headline font-bold text-text-main">Field Validation: Lame Rosse</p>
+              <span class="block text-xs font-bold text-accent mt-1 uppercase tracking-widest">2026 Milestone</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <app-footer></app-footer>
+</body>
 </html>

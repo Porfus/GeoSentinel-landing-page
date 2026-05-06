@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html class="scroll-smooth" lang="en">
 
 <head>
@@ -14,77 +13,79 @@
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
     rel="stylesheet" />
   <link rel="icon" type="image/png" href="logo.png" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
   <script src="navbar.js"></script>
   <script src="footer.js"></script>
+  <script src="animations.js"></script>
 </head>
 
-<body class="page-body">
-  <!-- Top Navigation Bar -->
+<body class="bg-space-900 text-text-main">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <app-navbar active="home"></app-navbar>
 
   <!-- Hero Section -->
-  <header class="hero-section">
+  <header id="main-content" class="hero-section" tabindex="-1">
     <div class="hero-image-container">
-      <img alt="Panoramic mountain view with digital satellite overlays" class="hero-image"
-        data-alt="expansive alpine mountain range at dusk with digital wireframe technical satellite grid overlays and glowing data points"
-        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCM9wW8OlPhh_d9V16L86K-TAQc1k0EyilVXMOpRaxJhSPyThN0b0wwkWGQe-VdOTrYEV8Hv5gVkyXb2dVovXPuq8bacPyiHcfebSq3G8JMm9cMTInMdpuaXOhfelf-pHwH5wT2CjemvQ2KqIpKwt1sAiHCmvcj3ypQeZl3J3Echm6I5tGsv_yhyobBosulrZc4V-xkodOLoz4_cyPU3SbNNyOkf3TpcVnIaZmZdHRxUHLzt127MzGtZg0D53NA_z-mvt1zw9mjrrU" />
+      <img alt="Mountain range" class="hero-image" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCM9wW8OlPhh_d9V16L86K-TAQc1k0EyilVXMOpRaxJhSPyThN0b0wwkWGQe-VdOTrYEV8Hv5gVkyXb2dVovXPuq8bacPyiHcfebSq3G8JMm9cMTInMdpuaXOhfelf-pHwH5wT2CjemvQ2KqIpKwt1sAiHCmvcj3ypQeZl3J3Echm6I5tGsv_yhyobBosulrZc4V-xkodOLoz4_cyPU3SbNNyOkf3TpcVnIaZmZdHRxUHLzt127MzGtZg0D53NA_z-mvt1zw9mjrrU" />
       <div class="hero-overlay"></div>
     </div>
 
     <div class="hero-content-wrapper">
-      <div class="hero-content-left">
+      <div class="reveal">
         <div class="hero-badge">
-          <span class="material-symbols-outlined hero-badge-icon"
-            style="font-variation-settings: 'FILL' 1;">satellite_alt</span>
+          <span class="material-symbols-outlined text-sm">satellite_alt</span>
+          <span>Satellite-assisted trail hazard</span>
         </div>
-
         <h1 class="hero-title">
           Safety from Space. <br />
           <span class="hero-title-highlight">Precision on the Trail.</span>
         </h1>
-
         <p class="hero-description">
-          GeoSentinel is a web service that calculates a geo-hydrological risk index for hiking trails by combining
-          three
-          components: historical risk based on slide history, soil moisture from Sentinel-1 SAR, and real-time
-          precipitation data and weather changes.
+          GeoSentinel combines historical landslide data, Sentinel-1 SAR soil moisture, and real-time precipitation to calculate a precise geo-hydrological hazard index.
         </p>
-
-        <div class="hero-actions">
-          <a href="https://gis-landslide-detection.vercel.app/" class="btn-explore">
-            Explore Safe Trails near Lago di Fiastra
-          </a>
-          <button id="video-btn" class="btn-watch">
+        <div class="flex flex-col gap-4 sm:flex-row">
+          <a href="https://gis-landslide-detection.vercel.app/" class="btn-primary">Explore Safe Trails</a>
+          <button id="video-btn" class="btn-secondary">
             <span class="material-symbols-outlined">play_circle</span>
-            Watch GeoSentinel Presentation
+            Watch Presentation
           </button>
+        </div>
+        <div class="mt-12 grid grid-cols-3 gap-4">
+          <div class="metric-box">
+            <span class="metric-value">3</span>
+            <span class="metric-label">Hazard signals</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-value">15m</span>
+            <span class="metric-label">Weather refresh</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-value">IFFI</span>
+            <span class="metric-label">Historical layer</span>
+          </div>
         </div>
       </div>
 
-      <div class="hero-content-right">
+      <div class="reveal hidden lg:block">
         <div class="live-feed-card">
-          <div class="live-feed-header">
-            <span class="live-feed-title">Live Orbital Feed</span>
+          <div class="flex items-center justify-between mb-4">
+            <span class="font-headline font-bold text-accent">Live Orbital Feed</span>
             <div class="status-indicator">
               <span class="status-dot"></span>
               <span class="status-text">Active</span>
             </div>
           </div>
-
           <div class="map-container">
-            <iframe src="https://gis-landslide-detection.vercel.app/" title="GeoSentinel Interactive Map"
-              class="map-iframe"></iframe>
-            <div class="map-overlay"></div>
+            <iframe src="https://gis-landslide-detection.vercel.app/" class="map-iframe" loading="lazy"></iframe>
           </div>
-
-          <div class="info-grid">
-            <div class="info-card">
-              <p class="info-label">Satellite Lat/Long</p>
-              <p id="coord-card" class="info-value">45.8327° N, 6.8650° E</p>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="bg-space-900/50 p-3 rounded border border-space-700">
+              <p class="text-[10px] text-text-muted uppercase font-bold mb-1">Satellite Coords</p>
+              <p id="coord-card" class="font-headline font-bold text-sm">45.8327° N, 6.8650° E</p>
             </div>
-            <div class="info-card">
-              <p class="info-label">Terrain Status</p>
-              <p id="status-card" class="info-value-secondary">Secure Pass</p>
+            <div class="bg-space-900/50 p-3 rounded border border-space-700">
+              <p class="text-[10px] text-text-muted uppercase font-bold mb-1">Terrain Status</p>
+              <p id="status-card" class="font-headline font-bold text-sm text-hazard-low">Secure Pass</p>
             </div>
           </div>
         </div>
@@ -93,113 +94,89 @@
   </header>
 
   <!-- Danger Index Section -->
-  <section class="danger-section">
-    <div class="section-container">
-      <div class="section-header">
+  <section class="section-padding">
+    <div class="max-w-screen-2xl mx-auto px-5 sm:px-8">
+      <div class="reveal mb-16 max-w-3xl">
         <h2 class="section-title">The GeoSentinel Danger Index</h2>
-        <p class="section-description">We process petabytes of environmental data to provide
-          a unified risk assessment. Our proprietary algorithm fuses atmospheric, terrestrial, and historical signals
-          into a single, actionable score.</p>
+        <p class="section-description">Our proprietary algorithm fuses atmospheric, terrestrial, and historical signals into a single, actionable score.</p>
       </div>
 
-      <div class="features-grid">
-        <!-- Meteorological Data -->
-        <div class="feature-card">
-          <div class="feature-icon-wrapper-primary">
-            <span class="material-symbols-outlined feature-icon-primary">thunderstorm</span>
+      <div class="grid gap-6 md:grid-cols-3 mb-16">
+        <div class="feature-card reveal">
+          <div class="feature-icon-wrapper">
+            <span class="material-symbols-outlined text-accent">thunderstorm</span>
           </div>
-          <h3 class="feature-title">Meteorological Data</h3>
-          <p class="feature-description">Real-time monitoring of rainfall intensity and
-            high-precision 3-days forecasts history to analyze weather changes in the last days.</p>
+          <h3 class="font-headline text-xl font-bold mb-3">Meteorological Data</h3>
+          <p class="text-sm text-text-muted">Real-time monitoring of rainfall intensity and 3-day history to analyze weather changes.</p>
         </div>
-
-        <!-- EO Data -->
-        <div class="feature-card">
-          <div class="feature-icon-wrapper-secondary">
-            <span class="material-symbols-outlined feature-icon-secondary">terrain</span>
+        <div class="feature-card reveal">
+          <div class="feature-icon-wrapper">
+            <span class="material-symbols-outlined text-accent">terrain</span>
           </div>
-          <h3 class="feature-title">EO Satellite Data</h3>
-          <p class="feature-description">Direct Earth Observation analysis measuring soil
-            moisture levels and terrain saturation to identify areas prone to instability.</p>
+          <h3 class="font-headline text-xl font-bold mb-3">EO Satellite Data</h3>
+          <p class="text-sm text-text-muted">Direct Earth Observation analysis measuring soil moisture levels and terrain saturation.</p>
         </div>
-
-        <!-- IFFI Records -->
-        <div class="feature-card">
-          <div class="feature-icon-wrapper-error">
-            <span class="material-symbols-outlined feature-icon-error">history_edu</span>
+        <div class="feature-card reveal">
+          <div class="feature-icon-wrapper">
+            <span class="material-symbols-outlined text-accent">history_edu</span>
           </div>
-          <h3 class="feature-title">IFFI Records</h3>
-          <p class="feature-description">Integration with the Italian Landslide Inventory to
-            map historical hazard zones and recurring geological risk patterns.</p>
+          <h3 class="font-headline text-xl font-bold mb-3">IFFI Records</h3>
+          <p class="text-sm text-text-muted">Integration with the Italian Landslide Inventory to map historical hazard zones.</p>
         </div>
       </div>
 
-      <div class="risk-synthesis-card">
-        <div class="risk-details">
-          <h4 class="risk-title">Integrated Risk Synthesis</h4>
-          <div class="risk-list">
-            <div class="risk-item">
-              <div class="progress-bar-container">
-                <div class="progress-bar-secondary"></div>
+      <div class="hazard-synthesis reveal" data-anime="danger-index">
+        <div class="flex-1 space-y-6">
+          <h4 class="font-headline text-2xl font-bold mb-4">Integrated Hazard Synthesis</h4>
+          <div class="space-y-4">
+            <div>
+              <div class="flex justify-between text-xs font-bold uppercase tracking-wider mb-2">
+                <span class="text-text-muted">Soil moisture</span>
+                <span class="text-hazard-low">85%</span>
               </div>
-              <span class="risk-label-secondary">Soil moisture</span>
+              <div class="progress-bg"><div class="progress-fill-low" data-width="85" style="width: 0%"></div></div>
             </div>
-            <div class="risk-item">
-              <div class="progress-bar-container">
-                <div class="progress-bar-primary"></div>
+            <div>
+              <div class="flex justify-between text-xs font-bold uppercase tracking-wider mb-2">
+                <span class="text-text-muted">Precipitation</span>
+                <span class="text-hazard-medium">40%</span>
               </div>
-              <span class="risk-label-primary">Precipitation</span>
+              <div class="progress-bg"><div class="progress-fill-medium" data-width="40" style="width: 0%"></div></div>
             </div>
-            <div class="risk-item">
-              <div class="progress-bar-container">
-                <div class="progress-bar-error"></div>
+            <div>
+              <div class="flex justify-between text-xs font-bold uppercase tracking-wider mb-2">
+                <span class="text-text-muted">Slides History</span>
+                <span class="text-hazard-high">15%</span>
               </div>
-              <span class="risk-label-error">Slides History</span>
+              <div class="progress-bg"><div class="progress-fill-high" data-width="15" style="width: 0%"></div></div>
             </div>
           </div>
         </div>
 
-        <div class="circular-progress-wrapper">
-          <svg class="circular-progress-svg">
-            <circle class="circular-progress-bg" cx="128" cy="128" fill="transparent" r="110" stroke="currentColor"
-              stroke-width="24"></circle>
-            <circle class="circular-progress-value" cx="128" cy="128" fill="transparent" r="110" stroke="currentColor"
-              stroke-dasharray="691" stroke-dashoffset="550" stroke-width="24"></circle>
+        <div class="relative flex h-64 w-64 items-center justify-center shrink-0">
+          <svg class="h-full w-full -rotate-90">
+            <circle class="text-space-700" cx="128" cy="128" fill="transparent" r="110" stroke="currentColor" stroke-width="12"></circle>
+            <circle class="circular-progress-value" cx="128" cy="128" fill="transparent" r="110" stroke="currentColor" stroke-dasharray="691" stroke-dashoffset="520" stroke-width="12" stroke-linecap="round"></circle>
           </svg>
-          <div class="circular-progress-content">
-            <span class="circular-progress-score">2.4</span>
-            <span class="circular-progress-label">Danger Index</span>
-          </div>
-        </div>
-
-        <div class="risk-summary">
-          <p class="risk-quote">"The composite index allows hikers to be alerted about
-            terrain that looks solid but is structurally compromised."</p>
-          <div class="status-alert">
-            <span class="material-symbols-outlined status-alert-icon"
-              style="font-variation-settings: 'FILL' 1;">check_circle</span>
-            <span class="status-alert-text">Current Status: Good for Exploration</span>
+          <div class="absolute inset-0 flex flex-col items-center justify-center">
+            <span class="circular-progress-score font-headline text-6xl font-black">2.4</span>
+            <span class="text-[10px] font-bold uppercase tracking-widest text-text-muted">Danger Index</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
   <app-footer></app-footer>
 
   <!-- Video Modal -->
-  <div id="video-modal" class="modal-wrapper">
+  <div id="video-modal" class="modal-wrapper hidden" role="dialog" aria-modal="true">
     <div id="video-modal-backdrop" class="modal-backdrop"></div>
-    <div id="video-modal-content" class="modal-content">
-      <div class="modal-close-wrapper">
-        <button id="close-video-modal" class="modal-close-btn">
-          <span class="material-symbols-outlined">close</span>
-        </button>
-      </div>
-      <iframe id="youtube-iframe" class="modal-iframe" src="" title="YouTube video player" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <div id="video-modal-content" class="modal-content overflow-hidden">
+      <button id="close-video-modal" class="absolute top-4 right-4 z-20 text-white hover:text-accent">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+      <iframe id="youtube-iframe" class="w-full h-full" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
   </div>
 
@@ -207,88 +184,23 @@
     document.addEventListener('DOMContentLoaded', () => {
       const videoBtn = document.getElementById('video-btn');
       const videoModal = document.getElementById('video-modal');
-      const videoModalContent = document.getElementById('video-modal-content');
-      const videoModalBackdrop = document.getElementById('video-modal-backdrop');
       const closeVideoModal = document.getElementById('close-video-modal');
       const youtubeIframe = document.getElementById('youtube-iframe');
-
       const videoId = 'ADvBRmq6ePo';
-      const videoUrl = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1`;
 
-      const openModal = () => {
-        // Mostra il contenitore (sovrascrive il display: none del CSS)
-        videoModal.style.display = 'flex';
-
-        // Anima l'opacità e la scala usando stili inline
-        setTimeout(() => {
-          videoModal.style.opacity = '1';
-          videoModalContent.style.setProperty('--tw-scale-x', '1');
-          videoModalContent.style.setProperty('--tw-scale-y', '1');
-        }, 10);
-
-        // Imposta l'url per farlo partire
-        youtubeIframe.src = videoUrl;
-      };
+      videoBtn?.addEventListener('click', () => {
+        videoModal.classList.remove('hidden');
+        youtubeIframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+      });
 
       const closeModal = () => {
-        // Avvia l'animazione di uscita
-        videoModal.style.opacity = '0';
-        videoModalContent.style.setProperty('--tw-scale-x', '0.95');
-        videoModalContent.style.setProperty('--tw-scale-y', '0.95');
-
-        // Aspetta che finisca l'animazione per nasconderlo del tutto e fermare il video
-        setTimeout(() => {
-          videoModal.style.display = 'none';
-          youtubeIframe.src = ''; // Rimuovi il src per far fermare il video
-        }, 300);
+        videoModal.classList.add('hidden');
+        youtubeIframe.src = '';
       };
 
-      if (videoBtn) {
-        videoBtn.addEventListener('click', openModal);
-      }
-
-      if (closeVideoModal) {
-        closeVideoModal.addEventListener('click', closeModal);
-      }
-
-      if (videoModalBackdrop) {
-        videoModalBackdrop.addEventListener('click', closeModal);
-      }
-
-      // Chiudi la modale anche con il tasto ESC
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && videoModal.style.display === 'flex') {
-          closeModal();
-        }
-      });
-    });
-  </script>
-
-  <script>
-    // In ascolto di messaggi provenienti dall'iframe
-    window.addEventListener("message", (event) => {
-      // Per sicurezza, potresti verificare l'origine:
-      // if (event.origin !== "https://gis-landslide-detection.vercel.app") return;
-
-      const data = event.data;
-
-      // Assicurati che il messaggio contenga le informazioni previste
-      if (data && data.type === "TRAIL_SELECTED") {
-        document.getElementById("coord-card").innerText =
-          `${data.payload.lat.toFixed(4)}° N, ${data.payload.lng.toFixed(4)}° E`;
-
-        const statusEl = document.getElementById("status-card");
-        statusEl.innerText = data.payload.status;
-
-        // Opzionale: puoi cambiare il colore a seconda dello status
-        if (data.payload.riskLevel === 'High') {
-          statusEl.className = "risk-label-error"; // Usa un colore di allerta
-        } else {
-          statusEl.className = "risk-label-secondary";
-        }
-      }
+      closeVideoModal?.addEventListener('click', closeModal);
+      document.getElementById('video-modal-backdrop')?.addEventListener('click', closeModal);
     });
   </script>
 </body>
-
 </html>

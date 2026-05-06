@@ -1,42 +1,42 @@
 class AppFooter extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
-      <footer class="bg-earth-nav w-full py-12 px-8 mt-auto border-t border-earth-100/10">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-7xl mx-auto">
+      <footer class="bg-space-900 w-full py-16 px-6 md:px-8 mt-auto border-t border-space-700" aria-label="GeoSentinel footer">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto">
           <div class="col-span-1 md:col-span-1">
-            <div class="text-lg font-bold text-alpine-bg font-headline mb-4">GeoSentinel Cassini</div>
-            <p class="text-alpine-dim text-sm antialiased font-body">Orbital Intelligence for Terrestrial Security.</p>
+            <div class="text-xl font-bold text-text-main font-headline mb-4 tracking-tight">GeoSentinel</div>
+            <p class="text-text-muted text-sm leading-relaxed">Orbital Intelligence for Terrestrial Security. Providing precision hazard assessment through advanced satellite telemetry.</p>
           </div>
           <div class="space-y-4">
-            <h5 class="text-alpine-bg font-bold text-sm uppercase tracking-widest">Platform</h5>
+            <h5 class="text-text-main font-bold text-xs uppercase tracking-[0.2em]">Platform</h5>
             <nav class="flex flex-col space-y-2">
-              <a class="text-alpine-dim hover:text-ochre transition-colors text-sm font-body antialiased" href="#">Site Map</a>
-              <a class="text-alpine-dim hover:text-ochre transition-colors text-sm font-body antialiased" href="#">Privacy Policy</a>
-              <a class="text-alpine-dim hover:text-ochre transition-colors text-sm font-body antialiased" href="#">Terms of Service</a>
+              <a class="text-text-muted hover:text-accent transition-colors text-sm" href="#">Site Map</a>
+              <a class="text-text-muted hover:text-accent transition-colors text-sm" href="#">Privacy Policy</a>
+              <a class="text-text-muted hover:text-accent transition-colors text-sm" href="#">Terms of Service</a>
             </nav>
           </div>
           <div class="space-y-4">
-            <h5 class="text-alpine-bg font-bold text-sm uppercase tracking-widest">Data Sources</h5>
+            <h5 class="text-text-main font-bold text-xs uppercase tracking-[0.2em]">Data Sources</h5>
             <nav class="flex flex-col space-y-2">
-              <a class="text-alpine-dim hover:text-ochre transition-colors text-sm font-body antialiased" href="https://open-meteo.com">Meteorological Data</a>
-              <a class="text-alpine-dim hover:text-ochre transition-colors text-sm font-body antialiased" href="https://sentinels.copernicus.eu">EO Sources</a>
-              <a class="text-alpine-dim hover:text-ochre transition-colors text-sm font-body antialiased" href="https://idrogeo.isprambiente.it">IFFI Registry</a>
+              <a class="text-text-muted hover:text-accent transition-colors text-sm" href="https://open-meteo.com">Meteorological Data</a>
+              <a class="text-text-muted hover:text-accent transition-colors text-sm" href="https://sentinels.copernicus.eu">EO Sources</a>
+              <a class="text-text-muted hover:text-accent transition-colors text-sm" href="https://idrogeo.isprambiente.it">IFFI Registry</a>
             </nav>
           </div>
           <div class="space-y-4">
-            <h5 class="text-alpine-bg font-bold text-sm uppercase tracking-widest">Contact</h5>
+            <h5 class="text-text-main font-bold text-xs uppercase tracking-[0.2em]">Connect</h5>
             <nav class="flex flex-col space-y-2">
-              <a class="text-alpine-dim hover:text-ochre transition-colors text-sm font-body antialiased" href="#">Contact Us</a>
+              <a class="text-text-muted hover:text-accent transition-colors text-sm" href="#">Contact Us</a>
               <div class="flex gap-4 mt-2">
-                <span class="material-symbols-outlined text-alpine-muted cursor-pointer hover:text-ochre">language</span>
-                <span class="material-symbols-outlined text-alpine-muted cursor-pointer hover:text-ochre">public</span>
-                <span class="material-symbols-outlined text-alpine-muted cursor-pointer hover:text-ochre">share</span>
+                <span class="material-symbols-outlined text-text-muted hover:text-accent cursor-pointer transition-colors">language</span>
+                <span class="material-symbols-outlined text-text-muted hover:text-accent cursor-pointer transition-colors">public</span>
+                <span class="material-symbols-outlined text-text-muted hover:text-accent cursor-pointer transition-colors">share</span>
               </div>
             </nav>
           </div>
         </div>
-        <div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-earth-100/10 text-center">
-          <p class="text-alpine-dim text-sm antialiased font-body">&copy; 2026 GeoSentinel Cassini. Orbital Intelligence for Terrestrial Security.</p>
+        <div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-space-700 text-center">
+          <p class="text-text-muted text-[10px] uppercase tracking-widest">&copy; 2026 GeoSentinel Cassini. All rights reserved.</p>
         </div>
       </footer>
     `;
