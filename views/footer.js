@@ -8,11 +8,11 @@ class AppFooter extends HTMLElement {
             <p class="text-text-muted text-sm leading-relaxed">Orbital Intelligence for Terrestrial Security. Providing precision hazard assessment through advanced satellite telemetry.</p>
           </div>
           <div class="space-y-4">
-            <h5 class="text-text-main font-bold text-xs uppercase tracking-[0.2em]">Platform</h5>
+            <h5 class="text-text-main font-bold text-xs uppercase tracking-[0.2em]">Navigation</h5>
             <nav class="flex flex-col space-y-2">
-              <a class="text-text-muted hover:text-accent transition-colors text-sm" href="#">Site Map</a>
-              <a class="text-text-muted hover:text-accent transition-colors text-sm" href="#">Privacy Policy</a>
-              <a class="text-text-muted hover:text-accent transition-colors text-sm" href="#">Terms of Service</a>
+              <a class="text-text-muted hover:text-accent transition-colors text-sm" href="index.html">Live MVP</a>
+              <a class="text-text-muted hover:text-accent transition-colors text-sm" href="howitworks.html">How it Works</a>
+              <a class="text-text-muted hover:text-accent transition-colors text-sm" href="aboutus.html">Our Story</a>
             </nav>
           </div>
           <div class="space-y-4">
