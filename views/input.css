@@ -58,7 +58,7 @@
   }
 
   .terminal-card-hover {
-    @apply hover:border-accent/40 hover:shadow-[0_0_20px_rgba(0,229,255,0.1)];
+    @apply hover:border-accent/40 hover:shadow-[0_0_20px_rgba(0,229,255,0.1)] hover:-translate-y-2;
   }
 
   /* Hero Section */
