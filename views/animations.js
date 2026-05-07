@@ -32,21 +32,62 @@ document.addEventListener('DOMContentLoaded', () => {
   function animateDangerIndex() {
     if (typeof anime === 'undefined') return;
 
-    // Reset values before animating to ensure a fresh start on click
+    const circumference = 691; // 2 * PI * 110
+    const scoreValue = 2.4;
+    const maxScore = 4.0;
+    const percentage = scoreValue / maxScore;
+    const targetOffset = circumference * (1 - percentage);
+
+    const levelElement = document.getElementById('hazard-level-label');
     const scoreElement = document.querySelector('.circular-progress-score');
+
+    // Mapping function
+    const getLevelInfo = (score) => {
+      if (score >= 3.0) return { name: 'Critical', class: 'text-hazard-high', color: '#FF3366' }; // Using high for critical
+      if (score >= 2.0) return { name: 'High', class: 'text-hazard-high', color: '#FF3366' };
+      if (score >= 1.2) return { name: 'Medium', class: 'text-hazard-medium', color: '#FFB020' };
+      return { name: 'Low', class: 'text-hazard-low', color: '#10B981' };
+    };
+
+    // Animate the number and label
     if (scoreElement) {
       const obj = { value: 0 };
       anime({
         targets: obj,
-        value: 2.4,
+        value: scoreValue,
         round: 10,
         easing: 'easeOutQuad',
         duration: 2000,
         update: function() {
-          scoreElement.innerHTML = obj.value.toFixed(1);
+          const currentScore = obj.value;
+          scoreElement.innerHTML = currentScore.toFixed(1);
+          
+          if (levelElement) {
+            const info = getLevelInfo(currentScore);
+            levelElement.innerHTML = info.name;
+            // Update color directly for smooth transition if needed, or just classes
+            levelElement.style.color = info.color;
+          }
         }
       });
     }
+
+    // Animate the circle
+    anime({
+      targets: '.circular-progress-value',
+      strokeDashoffset: [circumference, targetOffset],
+      easing: 'easeInOutQuart',
+      duration: 2000,
+      update: function(anim) {
+        // Optional: change circle color based on progress
+        const currentOffset = parseFloat(anim.animations[0].currentValue);
+        const currentPercent = 1 - (currentOffset / circumference);
+        const currentScore = currentPercent * maxScore;
+        const info = getLevelInfo(currentScore);
+        const circle = document.querySelector('.circular-progress-value');
+        if (circle) circle.style.color = info.color;
+      }
+    });
 
     // Animate progress bars - reset width first
     const bars = document.querySelectorAll('.progress-fill-low, .progress-fill-medium, .progress-fill-high');
